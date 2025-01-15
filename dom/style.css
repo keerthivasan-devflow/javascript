@@ -1,0 +1,43 @@
+.header {
+  text-align: center;
+  text-shadow: 0px 0px 3px red, 0px 0px 3px white;
+}
+
+label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: medium solid rgb(165, 161, 161);
+  padding: 15px 20px;
+}
+.form-container,
+.list-of-names {
+  border: solid medium rgb(67, 59, 59);
+  margin: 20px;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.add-btn,
+.remove-btn,
+.remove-all-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background: rgb(87, 33, 44);
+    color: white;
+    font-weight: bold;
+}
+
+.text-field{
+    border: solid thin rgb(105, 102, 102);
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+}

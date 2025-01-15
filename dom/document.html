@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="https://www.example.com/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Document Manipulation</title>
+    <style>
+      .link-collections > a {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="link-collections" id="list">
+      <a href="#">Empty URL</a>
+      <a href="https://www.google.com/">Google</a>
+      <a href="https://www.facebook.com/" name="facebook-url" id="facebook-url"
+        >Facebook</a
+      >
+      <a href="form-elements.html" name="static-html-form" id="html-form"
+        >HTML form</a
+      >
+    </div>
+
+    <div class="copied-code-block">
+      <h1>Welcome to My Website</h1>
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+      <p class="highlight">This is another paragraph.</p>
+      <ul>
+        <li class="item-1">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  console.log("document.documentElement : ", document.documentElement);
+  console.log("document.doctype : ", document.doctype);
+  console.log("document.doctype.name : ", document.doctype.name);
+  console.log("document.domain : ", document.domain);
+  console.log("document.URL : ", document.URL);
+  console.log("document.baseURI : ", document.baseURI);
+  console.log("document.head : ", document.head);
+  console.log("document.title : ", document.title);
+  console.log("document.body : ", document.body);
+  console.log("document.images : ", document.images);
+  console.log("document.anchors : ", document.anchors);
+  console.log("document.links : ", document.links);
+  console.log("document.forms : ", document.forms);
+  console.log("document.scripts : ", document.scripts);
+  console.log("document.lastModified : ", document.lastModified);
+  console.log("document.inputEncoding : ", document.inputEncoding);
+  console.log("document.cookie : ", document.cookie);
+  console.log(document.all)
+</script>

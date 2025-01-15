@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Nodes</title>
+  </head>
+  <body>
+    <div class="container">
+      <ol class="cars-list">
+        <li class="volvo">Volvo</li>
+        <li class="toyato">Toyato</li>
+        <li class="swift">Swift</li>
+        <li class="maruti">Maruti</li>
+      </ol>
+    </div>
+  </body>
+</html>
+
+<script>
+  let ParentDivElement = document.getElementsByTagName("div");
+  console.log(ParentDivElement[0].childNodes);
+
+  let nodetypes = document.querySelector(".cars-list");
+  console.log(nodetypes.children);
+
+  // var items = document.getElementsByTagName("li");
+  var items = document.querySelectorAll("li");
+  console.log(items.length); // Output: 3
+
+  // Adding a new item to the list
+  var ol = document.querySelector("ol");
+  ol.innerHTML += "<li>New Item</li>";
+
+  // The live collection updates
+  var items = document.querySelectorAll("li");
+  console.log(items.length); // Output: 4
+
+  let SecondItemList = document.querySelector(".toyato")
+  console.log(SecondItemList.parentNode.parentNode.parentNode.firstElementChild)
+  ol.appendChild(SecondItemList.cloneNode(true))
+</script>
