@@ -1,0 +1,61 @@
+ES6 Features:
+-------------
+https://es6-features.org/#Constants
+
+https://www.jschallenger.com/overview - For practice (**)
+
+STRING:
+-------
+1. How to remove vowels from the given string ?
+2. How to find the occurrence of vowels & consonants in the given string ?
+3. How to find the occurrence of a given letter in the string ?
+4. How to find the duplicated letters from the string ?
+5. How to copy string ?
+6. How to find the given string length ?
+7. How to find the occurence of each letter in the given string ?
+8. How to remove a given character from the string ?
+9. How to find the maximum number of occurence of a character in the given string ?
+10. How to reverse the given string ?
+
+ARRAY
+------
+1. How to delete particular elements in an array ? Deleting only even numbers from the given array elements.
+2. How to remove duplicates from array ? 3 ways to do so
+6. How to group array of objects
+7. How to find the occurence of each array element in an array ?
+8. How to find the largest and smallest number in an array ?
+9. How to find the second largest and smallest number in an array ?
+10. How to find the sum of of array values ?
+11. How to add or remove items from the cart using array? - Adding, removing and displaying array elements
+12. converting numbers to strings and vice versa
+13. Captilizing the first letter of each word in an array
+14. Create objects for person list, and return only person's name as an array of elements
+15. Create objects of person list and return 'person's.name is eligible to go to Agra' else, they are not eligible based on age
+17. Appending certain text to the existing string using forEach() method
+
+Array.some()
+************
+6. Who has actually completed atleast one task if you've given by list of tasks
+6.1. Have a list of input fields, suppose if any non-empty values exist, then pls do fill out.
+
+Array.every()
+*************
+3. Imagine you have a list of products in an e-commerce application, and you want to check if all products are in stock before allowing the user to place an order.
+
+Array.find(), Array.findLast() & Array.findIndex(), Array.findLastIndex()
+*************************************************************************
+4. Imagine you have a list of users. Now you want to find a user with specific id.
+5. Imagine you have a list of products and you want to find the index of a product with a specific ID. You can use Array.findIndex()
+
+Array.copyWithin():
+*******************
+https://www.javaguides.net/2019/04/javascript-array-copywithin-method.html - best examples shown here
+
+
+
+
+
+
+	 
+	  
+
