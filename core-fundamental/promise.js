@@ -23,7 +23,7 @@ function createOrderAPI(cart) {
 promise
   .then((data) => console.log(data)) // [ 'Mobiles', 'Laptops', 'Watches', 'Airpods' ]
   .catch((err) => console.log(err))
-  .then((data) => console.log("second promise.then()")) // undefined
-  .then((data) => console.log("third promise.then()")) // undefined
+  .then((data) => console.log("second promise.then() : ", data)) // undefined
+  .then((data) => console.log("third promise.then() : ", data)) // undefined
   // If you would like to test catch() method, then pass an empty cart
   .finally(() => console.log("Promise executed successfully"));
