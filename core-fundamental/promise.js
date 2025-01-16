@@ -1,65 +1,26 @@
-//Adding items to the cart
-let cart = ["Jeans", "Kurta", "Shirts", "Towels"];
+// let cartItems = ["Mobiles", "Pants", "Laptops", "Shoes", "Watches", "Airpods"];
+let cartItems = [];
 
-//Creating an order with items added in the cart. Now this create order API will return promise with an orderId
-let promise = createOrder(cart); //Returns promise with an orderId
-console.log("Before Promise: ", promise);
+let promise = createOrderAPI(cartItems);
 
-//After getting the promise, we will attach the callback function to this promise.
-promise
-  .then(function (orderId) {
-    console.log(orderId);
-    //console.log(promise)
-    //proceedToPayment(orderId);
-    return orderId;
-  })
-  .then(function (orderId) {
-    return proceedToPayment(orderId);
-  })
-  .then(function (paymentInfo) {
-    console.log(paymentInfo);
-    return showOrderSummary(paymentInfo);
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
-
-//How this createOrder API will return a promise? we as a developer should write code
-function createOrder(cart) {
-  let pr = new Promise(function (resolve, reject) {
-    if (!validateCart(cart)) {
-      let err = new Error("Cart is invalid");
-      reject(err);
-    }
-    let orderId = 174640;
-    if (orderId) {
-      setTimeout(() => {
-        resolve(orderId);
-      }, 5000);
-    }
+function createOrderAPI(cart) {
+  const pr = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (cart.length > 1) {
+        const updatedCart = cart.filter((item) => {
+          if (item.length > 5) return item;
+        });
+        resolve(updatedCart);
+      } else {
+        reject(new Error("cart is empty!"));
+      }
+    }, 5000);
   });
   return pr;
 }
 
-function validateCart(cart) {
-  return true;
-}
-
-function proceedToPayment(orderId) {
-//   const pr = new Promise(function (resolve, reject) {
-//     if (orderId) {
-//       resolve("Payment Successful...");
-//     } else {
-//       reject();
-//     }
-//   });
-//   return pr;
-
-  return new Promise(function (resolve, reject) {
-    if (orderId) {
-      resolve("Payment Successful...");
-    } else {
-      reject();
-    }
-  });
-}
+promise
+  .then((data) => console.log(data))
+  // If you would like to test catch() method, then pass an empty cart
+  .catch((err) => console.log(err))
+  .finally(() => console.log("Promise executed successfully"));
