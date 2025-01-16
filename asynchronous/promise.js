@@ -11,16 +11,15 @@ const promise = new Promise((resolve, reject) => {
   }, 3000);
 });
 
-// Order of .then() and .catch may be took place in different place, it will work.
 promise
   .then((data) => {
     console.log(data);
   })
   .then((data) => {
-    console.log(data); // undefined
+    console.log(data);
   })
   .then((data) => {
-    console.log(data); // undefined
+    console.log(data);
   })
   .catch((error) => {
     console.log(error);
