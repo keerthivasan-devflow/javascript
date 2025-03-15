@@ -12,14 +12,10 @@ addToCart("laptop");
 addToCart("travel bag");
 console.log(shoppingCart);
 
-//1. Deleting only even numbers from the given array elements.
-let numbers1 = [2, 8, 5, 3, 7, 10];
-let oddNumbers = numbers1.filter(function (element, index, array) {
-  if (element % 2 != 0) {
-    return element;
-  }
-});
-console.log(oddNumbers)
+//1. Deleting only even numbers from the given array elements
+let input = [2, 8, 5, 3, 7, 10];
+let odd = input.filter((value) => value % 2 != 0);
+console.log(odd);
 
 //2. Removing a particular item/element from an array
 var number = [10, 20, 30, 40];
@@ -31,42 +27,35 @@ if (index === -1) {
   number.splice(index, 1);
   console.log(number);
 }
-// 2.1. Removing a particular elements from an array
-function removeSpecificChar(element) {
-  if (element !== getNumber) {
-    return element;
-  }
-}
-const filteredValues = number.filter(removeSpecificChar);
-console.log(filteredValues);
 
 // 3. Removing Duplicates from array elements.
 let colors = ["red", "green", "red", "green", "green", "blue"];
-console.log([...new Set(colors)]); // 3.1. Removing duplicates using Set()
+
+// 3.1. Removing duplicates using Set()
+console.log([...new Set(colors)]); 
+
 // 3.2. Removing duplicates using Array.includes()
 let addColors = [];
 colors.forEach((element) => {
-  console.log(element);
   if (addColors.includes(element)) {
     console.log(`${element} is already exist`);
   } else {
     addColors.push(element);
   }
-  console.log("Colors : ", addColors);
 });
 console.log("addColors : ", addColors);
 
 // 3.3. Removing duplicates using Array.filter()
 let letters = ["A", "B", "A", "C", "B"];
-let uniqueChars = colors.filter((element, index, array) => letters.indexOf(element) == index);
+let uniqueChars = colors.filter(
+  (element, index) => letters.indexOf(element) == index
+);
 console.log("uniqueChars:", uniqueChars);
 
 // 4. Find the occurence of each array element
 let arr = [5, 2, 1, 2, 5, 1, 1, 2, 9, 4];
 let count = {};
-arr.forEach((element, index, array) => {
-  console.log(count);
-  console.log(count[element]);
+arr.forEach((element) => {
   //Checking the current array element as a key is present or not in the count object
   //if it presents, then count++ ; else count = 1
   if (count[element]) {
@@ -136,20 +125,12 @@ const products = [
 ];
 const totalProductsValue = products.map((product) => {
   console.log(product);
-  //   return product.price * product.count
   //   return [product.name, product.price * product.count];
   return {
     nameOfTheProduct: product.name,
     totalValueOfTheProduct: product.price * product.count,
   };
 });
-
-// 9. CONVERTING STRING INTO ARRAY
-const name = "Sammy";
-const newName = Array.prototype.map.call(name, (eachLetter) => {
-  return `${eachLetter}`;
-});
-console.log(newName);
 
 // 10. Grouping objects using Array.map()
 const myUsers = [
@@ -233,20 +214,27 @@ console.log(numbers.lastIndexOf(10, -8));
 console.log(numbers.lastIndexOf(10, -9));
 console.log(numbers.lastIndexOf(10, -10));
 
-
-// 15. 
+// 15.
 let colorslist = [`red`, `green`, `red`, `green`, `green`, `blue`];
 let countColors = {};
 colorslist.forEach((element, index, array) => {
   console.log(`Step:${index + 1}\tcountColors: ${JSON.stringify(countColors)}`);
   if (countColors[element]) {
-         console.log(`Step:${index + 1}\tElement:"${element.toLocaleUpperCase()}" is exist! Increment++`);
-         console.log("\n");
-         countColors[element]++;
+    console.log(
+      `Step:${
+        index + 1
+      }\tElement:"${element.toLocaleUpperCase()}" is exist! Increment++`
+    );
+    console.log("\n");
+    countColors[element]++;
   } else {
-         console.log(`Step:${index + 1}\tElement:"${element.toLocaleUpperCase()}" doesn't exist! Initialize it to 1`);
-         console.log("\n");
-         countColors[element] = 1;
+    console.log(
+      `Step:${
+        index + 1
+      }\tElement:"${element.toLocaleUpperCase()}" doesn't exist! Initialize it to 1`
+    );
+    console.log("\n");
+    countColors[element] = 1;
   }
 });
 console.log("Final output: ", countColors);

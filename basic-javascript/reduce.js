@@ -78,6 +78,32 @@ const groupedData = data.reduce((accumulator, currentValue) => {
 const resultValue = Object.values(groupedData);
 console.log(resultValue);
 
+
+const products = [
+  { name: "Shirt", category: "Clothing" },
+  { name: "Pants", category: "Clothing" },
+  { name: "Apple", category: "Food" },
+  { name: "Banana", category: "Food" },
+  { name: "Watch", category: "Accessories" },
+];
+
+const groupedByCategory = products.reduce((acc, currentProduct) => {
+  // Get the category from the current product
+  const category = currentProduct.category;
+
+  // If the accumulator does not have that category, initialize it with an empty array
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+
+  // Push the current product to the corresponding category
+  acc[category].push(currentProduct);
+
+  return acc;
+}, {}); // Start with an empty object
+
+console.log(groupedByCategory);
+
 /*
 Code explanation of above program:
 ----------------------------------

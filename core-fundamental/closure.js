@@ -18,3 +18,24 @@ function outer() {
 }
 let InnerFunction = outer();
 InnerFunction();
+
+// Counter functionality using closure for better understanding
+function counter() {
+  let count = 0;
+  return function () {
+    count = count + 1;
+    console.log(count);
+  };
+}
+
+let firstCounter = counter();
+firstCounter();
+firstCounter();
+firstCounter();
+// output: 1 2 3
+
+let secondCounter = counter();
+secondCounter();
+secondCounter();
+secondCounter();
+//  output: 1 2 3

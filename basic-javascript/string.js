@@ -59,6 +59,7 @@ console.log("accessText_usingIndex[2] : ", accessText_usingIndex[2])
 console.log("accessText_usingIndex[-1] : ", accessText_usingIndex[-1])
 console.log("accessText_usingIndex[null] : ", accessText_usingIndex[null])
 console.log("accessText_usingIndex[true] : ", accessText_usingIndex[true])
+console.log("accessText_usingIndex[undefined] : ", accessText_usingIndex[undefined])
 
 console.log("------------ Using charAt() -----------")
 console.log("accessText_usingIndex.charAt() : ", accessText_usingIndex.charAt())
@@ -66,6 +67,7 @@ console.log("accessText_usingIndex.charAt(2) : ", accessText_usingIndex.charAt(2
 console.log("accessText_usingIndex.charAt(-1) : ", accessText_usingIndex.charAt(-1))
 console.log("accessText_usingIndex.charAt(null) : ", accessText_usingIndex.charAt(null))
 console.log("accessText_usingIndex.charAt(true) : ", accessText_usingIndex.charAt(true))
+console.log("accessText_usingIndex.charAt(undefined) : ", accessText_usingIndex.charAt(undefined))
 
 console.log("-------- Using at() ----------------")
 console.log("accessText_usingIndex.at() : ", accessText_usingIndex.at())
@@ -73,6 +75,7 @@ console.log("accessText_usingIndex.at(2) : ", accessText_usingIndex.at(2) )
 console.log("accessText_usingIndex.at(-1) : ",accessText_usingIndex.at(-1))
 console.log("accessText_usingIndex.at(null) : ", accessText_usingIndex.at(null))
 console.log("accessText_usingIndex.at(true) : ", accessText_usingIndex.at(true))
+console.log("accessText_usingIndex.at(undefined) : ", accessText_usingIndex.at(undefined))
 
 var SliceJackfruit = "Jackfruit";
 console.log("SliceJackfruit.slice() : ", SliceJackfruit.slice())
@@ -93,26 +96,25 @@ console.log("SliceJackfruit.slice(true, undefined) : ", SliceJackfruit.slice(tru
 console.log("SliceJackfruit.slice(null, undefined) : ", SliceJackfruit.slice(null, undefined))
 console.log("SliceJackfruit.slice(2, undefined) : ", SliceJackfruit.slice(2, undefined))
 console.log("SliceJackfruit.slice(undefined, 2) : ", SliceJackfruit.slice(undefined, 2))
+console.log("SliceJackfruit.slice(undefined, undefined) : ", SliceJackfruit.slice(undefined, undefined))
 
 var substringText = "God is great";
-console.log("SubString")
-console.log("------------------------------------------")
-console.log(substringText.substring())
-console.log(substringText.substring(0))
-console.log(substringText.substring(6))
-console.log(substringText.substring(13))
-console.log(substringText.substring(-5))
-console.log(substringText.substring(2,5))
-console.log(substringText.substring(5,2))
-console.log(substringText.substring(3,3))
-console.log(substringText.substring(false, true))
-console.log(substringText.substring(true, false))
-console.log(substringText.substring(undefined, 5))
-console.log(substringText.substring(null, 4))
-console.log(substringText.substring(-3,-1))
-console.log(substringText.substring(-45, 3))
-console.log(substringText.substring(3, -45))
-console.log(substringText.substring(40))
+console.log("substringText.substring() : ", substringText.substring());
+console.log("substringText.substring(0) : ", substringText.substring(0));
+console.log("substringText.substring(6) : ", substringText.substring(6));
+console.log("substringText.substring(13) : ", substringText.substring(13));
+console.log("substringText.substring(-5) : ", substringText.substring(-5));
+console.log("substringText.substring(2,5) : ", substringText.substring(2, 5));
+console.log("substringText.substring(5,2) : ", substringText.substring(5, 2));
+console.log("substringText.substring(3,3) : ", substringText.substring(3, 3));
+console.log("substringText.substring(false, true) : ", substringText.substring(false, true))
+console.log("substringText.substring(true, false) : ", substringText.substring(true, false))
+console.log("substringText.substring(undefined, 5) : ", substringText.substring(undefined, 5))
+console.log("substringText.substring(null, 4) : ", substringText.substring(null, 4))
+console.log("substringText.substring(-3,-1) : ", substringText.substring(-3,-1))
+console.log("substringText.substring(-45, 3) : ", substringText.substring(-45, 3))
+console.log("substringText.substring(3, -45) : ", substringText.substring(3, -45))
+console.log("substringText.substring(40) : ", substringText.substring(40));
 
 console.log(sliceString.substr(5,3))
 console.log(sliceString.substr(0))
@@ -120,10 +122,10 @@ console.log(sliceString.substr(-5))
 console.log(sliceString.substr(2,0))
 console.log(sliceString.substr(2, -5))
 
-var splitText = "He is nice guy"
-console.log(splitText.split(""))
-console.log(splitText.split(" "))
-console.log(splitText.split())
+var textSplit = "He is nice guy"
+console.log(textSplit.split())
+console.log(textSplit.split(""))
+console.log(textSplit.split(" "))
 
 var fruits = "Fruits"
 var flowers = "Flowers"
@@ -159,11 +161,10 @@ console.log('string.indexOf(" ") : ', string.indexOf(" "))
 
 console.log('string.indexOf("",17) : ', string.indexOf("",17))
 console.log('string.indexOf("",32) : ', string.indexOf("",32))
+console.log('string.indexOf("", 10) : ', string.indexOf("", 10));
 
 console.log('string.indexOf("dog", 17) : ', string.indexOf("dog", 17))
 console.log('string.indexOf("dog", 32) : ', string.indexOf("dog", 32))
-
-console.log('string.indexOf("", 10) : ', string.indexOf("", 10))
 console.log('string.indexOf("dog", 10) : ', string.indexOf("dog", 10))
 
 console.log('string.indexOf("", -20) : ', string.indexOf("", -20))
@@ -191,9 +192,9 @@ console.log('string.lastIndexOf("d", -10) : ', string.lastIndexOf("d", -10))
 /*****************************************************************************************/
 
 console.log(text.toUpperCase())
+console.log(text.toLowerCase())
 console.log(text.toLocaleUpperCase())
 console.log(text.toLocaleLowerCase())
-console.log(text.toLowerCase())
 
 var replaceText = "dog dog Dog"
 console.log(replaceText.replace("d","F"))
@@ -202,11 +203,13 @@ console.log(replaceText.replace(/d/gi,"F"))
 console.log(replaceText.replaceAll("d","F"))
 console.log(replaceText.replaceAll(/d/gi,"F"))
 
+// If the negative index is greater than or equal to the length of the string, it starts searching from the beginning of the string.
 var includesText = "Japan is one of the country"
 console.log(includesText.includes("one"))
 console.log(includesText.includes("kiki"))
-console.log(includesText.includes("is",6))
+console.log(includesText.includes("is", 6))
 
+// Returns an array of string - Incase there is no match, then it returns NULL
 var matchText = "He is nice doctor who is general doctor, Doctor"
 console.log(matchText.match("doctor"))
 console.log(matchText.match(/doctor/g))

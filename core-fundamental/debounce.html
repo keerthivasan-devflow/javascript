@@ -3,69 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test Document</title>
+    <title>Asynchronous Code Execution in JavaScript</title>
   </head>
   <body>
-    <input type="text" name="username" id="username" autocomplete="off" />
-  </body>
-  <script>
-    let searchElement = document.querySelector("input");
-    let p = document.createElement("p");
-    document.body.append(p);
-    p.textContent = "Default: ";
+    <h1>Asynchronous Code Execution</h1>
 
-    function defaultTextOutcome(input) {
-      p.textContent = "Default: " + input;
-    }
+    <div class="container">
+      <input
+        type="search"
+        id="searchInput"
+        value=""
+        placeholder="Enter search query"
+        autocomplete="off"
+      />
+    </div>
 
-    // Debouncing START
-    let p2 = document.createElement("p");
-    document.body.append(p2);
-    p2.textContent = "Debounce: ";
+    <script>
+      let counter = 1;
+      let search = document.getElementById("searchInput");
 
-    function debounceTextOutcome(input) {
-      p2.textContent = "Debounce: " + input;
-    }
-
-    function debounce(func, delay) {
-      let timeout;
-      return function (...args) {
-        if (timeout) clearTimeout(timeout);
-        timeout = setTimeout(() => func(...args), delay);
-      };
-    }
-
-    let debounceResult = debounce(debounceTextOutcome, 3000);
-    // Debouncing END
-
-    let p3 = document.createElement("p");
-    document.body.appendChild(p3);
-    p3.textContent = "Throttle: ";
-
-    function throttleTextOutcome(input) {
-      p3.textContent = "Throttle: " + input;
-    }
-
-    function throttle(func, delay) {
-      let flag = true;
-      return function (...arguments) {
-        if (flag) {
-          func(...arguments);
-          flag = false;
-          setTimeout(() => {
-            flag = true;
-          }, delay);
+      async function searchQueryAPI(query) {
+        try {
+          console.log(`${query} - ${counter++}`);
+          const response = await fetch(`http://api.example.com/search?query=${query}`);
+          const data = await response.json();
+          console.log(data);
+        } catch (err) {
+          console.log(err);
         }
-      };
-    }
+      }
 
-    let throttleResult = throttle(throttleTextOutcome, 3000);
+      function debounce(func, delay) {
+        let timer;
+        return function (...args) {
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(() => {
+            func(...args);
+          }, delay);
+        };
+      }
 
-    searchElement.addEventListener("keyup", (event) => {
-      console.count("Event is triggered!");
-      defaultTextOutcome(event.target.value);
-      debounceResult(event.target.value);
-      throttleResult(event.target.value);
-    });
-  </script>
+      let optimizedFunc = debounce(searchQueryAPI, 1000);
+      search.addEventListener("keyup", (e) => optimizedFunc(e.target.value));
+    </script>
+  </body>
 </html>

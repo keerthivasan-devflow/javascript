@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous Code Execution in JavaScript</title>
+  </head>
+  <body>
+    <h1>Asynchronous Code Execution</h1>
+
+    <div class="container">
+      <button type="button" id="click">Click</button>
+    </div>
+
+    <script>
+      let button = document.getElementById("click");
+      let count = 0;
+
+      function outcome() {
+        console.log(`Button clicked - ${count++}`);
+      }
+
+      function betterPerformance(func, limit) {
+        let flag = true;
+        return function () {
+          if (flag) {
+            func();
+            flag = false;
+            setTimeout(() => {
+              flag = true;
+            }, limit);
+          }
+        };
+      }
+
+      let throttle = betterPerformance(outcome, 3000);
+      button.addEventListener("click", throttle);
+    </script>
+  </body>
+</html>

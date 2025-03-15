@@ -106,7 +106,7 @@ for(let key in students){
 
 //15. Object Literals
 //1. List of variables as objects
-const username = 'dipakkr'
+const username = 'kvasan'
 const country = 'India'
 const password = '123456'
 const user = { 
@@ -119,10 +119,10 @@ console.log(username)
 
 //2. you can directly write function w/o using keyword 'function'
 var person = {
-    userName: "Keerthivasan",
+    username: "Keerthivasan",
     age: "30",
     printName(){
-        console.log(`My name is : ${userName}`)
+        console.log(`My name is : ${username}`)
     }
 }
 person.printName()
@@ -138,21 +138,6 @@ console.log(machine[machineName]);
 console.log(machine['machine hours']);
 console.log(machine["machine name"])
 
-//5. Function with objects
-function getLaptop(make, model, year) {
-    // return {
-    //     make: make,
-    //     model: model,
-    //     year: year
-    // }
-    return {
-        make,
-        model,
-        year
-    }
-}
-console.log(getLaptop("Apple", "MacBook", "2015"))
-
 //Shallow Copy and Deep Copy
 let originalValue = {
   name: "Keerthi",
@@ -167,23 +152,21 @@ let originalValue = {
 };
 
 //way 1, you can add, update but affects both
-// let copiedValue = originalValue
-// console.log("originalValue: ", originalValue);
-// console.log("copiedValue: ", copiedValue);
-// copiedValue.dob = "16-04-1997"
-// console.log("originalValue: ", originalValue);
-// console.log("copiedValue: ", copiedValue);
+// let copiedValue = originalValue;
+// copiedValue.age = 28;
+// console.log("After making changes");
+// console.log("originalValue : ", originalValue);
+// console.log("copiedValue : ", copiedValue);
 
 //way 2
 // let copiedValue = JSON.stringify(originalValue) //you cannot add/update, you cannot convert function as string
 // let copiedValue = JSON.parse(JSON.stringify(originalValue)) //now you can/update, doesn't affect copiedValue but problem with nested obj
-// console.log("originalValue: ", originalValue);
-// console.log("copiedValue: ", copiedValue);
-// copiedValue.dob = "16-04-1997"
-// copiedValue.age = 26
-// copiedValue.address.city = "Salem"
-// console.log("originalValue: ", originalValue);
-// console.log("copiedValue: ", copiedValue);
+// console.log("Before making changes");
+// console.log("copiedValue : ", copiedValue);
+// copiedValue.age = 28;
+// copiedValue.address.city = "salem";
+// console.log("After making changes");
+// console.log("copiedValue : ", copiedValue);
 
 //way3 affects both original and copied value nested object property but provides partial deep copy
 // let copiedValue = Object.assign({}, originalValue)

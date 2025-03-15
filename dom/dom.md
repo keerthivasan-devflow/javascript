@@ -1,5 +1,5 @@
-Introduction to basic DOM methods - dcode - youtube channel for reference
-**************************************************************************
+### Introduction to basic DOM methods - dcode - youtube channel for reference
+
 1.	element.setAttribute(“attributename”, “attributevalue”) – you can add css too.
 2.	element.removeAttribute(“attributename”)
 3.  element.removeAttributeNode()
@@ -32,8 +32,8 @@ Introduction to basic DOM methods - dcode - youtube channel for reference
 21. How to check whether the radio button or checkbox is checked/not.
 22. How to access form elements using document.forms.[name_attribute_of_specific_element]
 
-Selecting the HTML Elements
-****************************
+### Selecting the HTML Elements
+
 1.	document.getElementById(“id”)
 2.	document.getElementsByClassName(“classname”)
 3.	document.getElementsByTagName(“tagname”)
@@ -41,8 +41,8 @@ Selecting the HTML Elements
 5.  document.querySelectorAll("any css selectors)
 6.	document.getElementsByName("name attribute")
 
-Introduction to basic DOM Properties
-*************************************
+### Introduction to basic DOM Properties
+
 1. innerHTML, innerText
 2. outerHTML, outerText
 3. textContent
@@ -51,8 +51,8 @@ Introduction to basic DOM Properties
 6. nextElementSibling, previousElementSibling, nextSibling, previousSibling
 7. children, childNodes, parentElement, parentNode, children.length, childElementCount
 
-Introduction to Nodes
-**********************
+### Introduction to Nodes
+
 1. What is node?
 2. Three main properties of node - nodeType, nodeName, nodeValue, [extra: tagName]
 3. Types of Node - 12 but only the following are important: Element, Attribute, Text, Comment, Document, DocumentType 
@@ -64,8 +64,8 @@ Introduction to Nodes
 9. What is CSSOM?
 10. What is Render Tree?
 
-Introduction to HTML Form Element & Events (youtube - Leela web dev channel, cyberdude networks)
-************************************************************************************************
+### Introduction to HTML Form Element & Events (youtube - Leela web dev channel, cyberdude networks)
+
 1. What is event and types of events?
     i. Multiple events declaration is possible in an element but it should be different types of event(like onmouserover,onclick etc).
         -- if an element has same type - only first event will be triggered.(inline, inline-properties.)
@@ -75,7 +75,10 @@ Introduction to HTML Form Element & Events (youtube - Leela web dev channel, cyb
 4. Event Objects
 5. element.value vs element.getAttribute("value")
 6. element.placeholder
-7. HTML Input Handling - onclick, ondblclick, onmouseover, onkeypress, focus,input,onchange, cut/copy/paste, focus(), blur()
+7. HTML Input Handling
+ - **Click Events:** onclick, ondblclick
+ - **Keyboard Interaction Events:** onkeyup, onkeydown, `onkeypress (deprecated in the modern browers like Chrome and Firefox)`
+ - **Mouse Events:** onmouseover, focus,input,onchange, cut/copy/paste, focus(), blur()
 8. HTML Select Handling - selectedIndex, add(newOptionElement, indexToAdd), remove(index)
 9. HTML Radio/Checkbox Element - checked, when we will get 'on' a value.
 10. removeEventListener, once keyword as a 3rd parameter in addEventListener.

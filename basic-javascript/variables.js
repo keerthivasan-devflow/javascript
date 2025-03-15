@@ -1,14 +1,13 @@
 /*
-1. Variable names should begin with dollar sign, underscore, or letters, but subsequent
-    characters may be letters, numbers.
-2. variable names should be descriptive, it must not be some random names like x, y, xz.
+1. Variable names must begin with a dollar sign, underscore, or letter, and the subsequent characters may be letters, 
+    numbers, but cannot start with a numeric value.
+2. variable names should be descriptive.
 3. Variable name are case sensitive so that "age", "Age", and "AGE" are three different variables.
 4. Variables should not contain hyphens to separate the words.
 5. There should not be any white space between the variables.
-6. No need to specify the datatype explicitly while declaring the variable, bacause
-    javascript itself is a dynamically typed programming language.
-7. Variable should never start a numeric value.
-8. Variables names should not be a reserved keywords.
+6. No need to specify the datatype explicitly while declaring the variable, because javascript itself is a dynamically 
+    typed programming language.
+7. Variables names should not be a reserved keywords.
 */
 
 // 1. VALID VARIBALE NAMES
