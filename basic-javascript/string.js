@@ -1,16 +1,17 @@
-var simpleText_In_singleQuotes = 'Hello Keerthi, How are you ?'
-var simpleText_In_DoubleQuotes = "Raju is very notorious guy"
-var simpleText_In_Backticks = `Charles Babbage is the father of computer`
-var singleQuotes_In_DoubleQuotes = "'Computer' is a fast elctronic calcultaing machine"
-var singleQuotes_Using_EscapeSequences = '\'Mahatma Gandhiji\' is a hard working guy'
-var singleQuotes_In_Bacticks = `'Tajmahal' is one of the seven wonders of the world`
 
-console.log(simpleText_In_singleQuotes)
-console.log(simpleText_In_DoubleQuotes)
-console.log(simpleText_In_Backticks)
-console.log(singleQuotes_In_DoubleQuotes)
-console.log(singleQuotes_Using_EscapeSequences)
-console.log(singleQuotes_In_Bacticks)
+let SingleQuoteText = 'Hello Keerthi, How are you ?'
+let DoubleQuoteText = "Raju is very notorious guy"
+let BackticksText = `Charles Babbage is the father of computer`
+let SingleQuotes_In_SingleQuotes = "'Mahatma Gandhiji' is a hard working guy";
+let SingleQuotes_In_DoubleQuotes = "'Computer' is a fast elctronic calcultaing machine"
+let SingleQuotes_In_Bacticks = `'Tajmahal' is one of the seven wonders of the world`
+
+console.log("SingleQuoteText : ", SingleQuoteText)
+console.log("DoubleQuoteText : ", DoubleQuoteText)
+console.log("BackticksText : ", BackticksText)
+console.log("SingleQuotes_In_SingleQuotes : ", SingleQuotes_In_SingleQuotes);
+console.log("SingleQuotes_In_DoubleQuotes : ", SingleQuotes_In_DoubleQuotes)
+console.log("SingleQuotes_In_Bacticks : ", SingleQuotes_In_Bacticks)
 
 var text_ToFindTextLength = "Banana"
 var text_ToFindTextLength_With_EscapeSequence = '\'Laksha\''

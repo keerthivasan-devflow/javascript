@@ -12,12 +12,12 @@ outer();
     and also trying to access variables from the outer function scoped variables here. */
 function outer() {
   let text = "Keerthivasan is a React Developer";
-  return function inner() {
+  return function () {
     console.log(text);
-  }
+  };
 }
-let InnerFunction = outer();
-InnerFunction();
+let inner = outer();
+inner();
 
 // Counter functionality using closure for better understanding
 function counter() {

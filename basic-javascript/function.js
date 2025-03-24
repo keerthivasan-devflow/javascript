@@ -1,8 +1,6 @@
 //  1.Function Declaration/Function Definition/Function Statement
 function declaration() {
-  console.log(
-    "Function Declaration or Definition or Statement will be executed!"
-  );
+  console.log("Function Declaration/Definition");
 }
 
 declaration();
@@ -13,20 +11,14 @@ let expression = function () {
 };
 expression();
 
-//  3. Anonymous Function
-let anonymous = function () {
-  console.log("Anonymous Function will be executed!");
-};
-anonymous();
-
-//  4. Named Function Expression
+//  3. Named Function Expression
 let namedExpression = function xyz() {
   console.log("Named Function Expression");
   console.log(xyz);
 };
 namedExpression();
 
-//  5. Function with 'new' Keyword
+// 4. Function with 'new' Keyword
 let addition = new Function("a", "b", "console.log(a+b)");
 addition(10, 20);
 
@@ -40,7 +32,7 @@ function calculateValues(a, b) {
   };
 }
 const { sum, difference, product, quotient } = calculateValues(5, 3);
-console.log(sum, difference, product, quotient)
+console.log(sum, difference, product, quotient);
 
 //Fibanocci series
 function fibonacci(n) {
@@ -67,3 +59,16 @@ function add(a, b, c) {
 console.log(add.name);
 console.log(add.length);
 console.log(add);
+
+//////////////////////////////////////////////////
+
+// Impure Function
+let cart = ["pants", "kurtas", "shirts", "towels"];
+function addToCart(item) {
+  return cart.push(item);
+  // return [...cart, item]
+}
+
+addToCart("blankets");
+addToCart("Kerchief");
+addToCart("Sarees");

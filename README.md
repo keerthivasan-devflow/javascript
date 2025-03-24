@@ -12,9 +12,7 @@
 4. Nisha Singla
 5. code.io tamil
 6. UNIQ Technologies
-
-**Debounce concepts**
-1. Velmurugan MG - YouTube Channel
+7. Velmurugan MG - YouTube Channel (Esp'ly for Debounce Concept)
 
 **Introduction to Javascript basics**
 **YouTube Reference**
@@ -25,18 +23,4 @@
 
 **Interview Questions** 
 - https://github.com/sudheerj/javascript-interview-questions
-
-
-## Double bang operator / proxy 
-## Typescript
-•	What is type annotation and type infer or type inference?
-•	What are utility types in typescript? (Partial, Readonly, Required, Omit, Pick etc)
-•	What is string literal type?
-•	What is generic type?
-•	What is type guard?
-•	What is the difference between never, unknown and any keyword?
-•	Why do we not use “any” keyword?
-•	What is decorator?
-•	What is the use “read-only” keyword?
-•	What is ENUM?
-•	What is the difference between type alias and interface? (Most frequently asked)
+- https://github.com/yangshun/top-javascript-interview-questions
