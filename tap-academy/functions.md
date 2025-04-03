@@ -39,4 +39,7 @@ Advanced
 - Can cause side effects.
 
 1. Why are pure functions important in React?
-React can easily determine whether it needs to re-render the component by comparing the previous and next props (via a shallow comparison). Pure functions are important in React because they help with predictability and optimizing re-renders.
+    React can easily determine whether it needs to re-render the component by comparing the previous and next props (via a shallow comparison). Pure functions are important in React because they help with predictability and optimizing re-renders.
+
+2. What is factory function?
+    Factory functions are functions that return objects. They are useful for creating multiple instances of similar objects without the need for constructor functions.

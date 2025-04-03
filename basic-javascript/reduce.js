@@ -1,4 +1,20 @@
-//1. Counting Instances using reduce() method
+// If the array only has one element (regardless of position) and no initialValue is provided, 
+// or if initialValue is provided but the array is empty, the solo value will be returned without calling callbackFn.
+const getMax = (a, b) => Math.max(a, b);
+[50].reduce(getMax); // 50
+[].reduce(getMax, 1); // 1
+
+// If initialValue is provided and the array is not empty, then the reduce method will 
+// always invoke the callback function starting at index 0
+[1, 100].reduce(getMax, 50); // 100
+[50].reduce(getMax, 10); // 50
+
+// reduce() skips missing elements in sparse arrays, but it does not skip undefined values.
+console.log([1, 2, , 4].reduce((a, b) => a + b)); // 7
+console.log([1, 2, undefined, 4].reduce((a, b) => a + b)); // NaN
+
+
+// Example 1
 const fruitsContainer = [
   "apple",
   "orange",
@@ -7,15 +23,19 @@ const fruitsContainer = [
   "orange",
   "apple",
 ];
+
 const fruitCounts = fruitsContainer.reduce((acc, fruit) => {
-  console.log(acc);
   acc[fruit] = (acc[fruit] || 0) + 1;
   return acc;
 }, {});
-console.log(fruitCounts); // Output: { apple: 3, orange: 2, banana: 1 }
-console.log([...fruitsContainer.entries()]); // How to use entries() method - [key, value] pair
+console.log(fruitCounts);
 
-//2. Transforming data using reduce() method
+// acc[fruit] is undefined because "apple" hasn’t been seen yet.
+// (undefined || 0) becomes 0.
+// acc["apple"] = 0 + 1 → acc["apple"] = 1.
+// Output: { apple: 3, orange: 2, banana: 1 }
+
+// Example 2
 const dataContainer = [
   { key: "a", value: 1 },
   { key: "b", value: 2 },

@@ -1,6 +1,5 @@
 console.log(new Date())
 console.log(new Date(2022,10,22,5,18,34))
-
 console.log(new Date(2022, 10, 22))
 console.log(new Date("November 13 2022"))
 console.log(new Date("2022-11-22"))

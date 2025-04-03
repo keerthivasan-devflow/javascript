@@ -1,20 +1,18 @@
 ## Array.filter()
-**Purpose:** The filter() method is used to filter the elements of an array based on a condition. It returns a new array containing only the elements that pass the test provided by the function.
-**Returns:** A new array that contains only the elements that meet the condition specified in the callback function.
+- The filter() method is used to filter the elements of an array based on a condition and returns the new array.
 
 ## Array.some()
-1. Who has actually completed atleast one task if you've given by list of tasks
-   1.1. Have a list of input fields, suppose if any non-empty values exist, then pls do fill out.
+- Who has actually completed atleast one task if you've given by list of tasks.
 
 ## Array.every()
+- In an e-commerce application, you want to check if all products are in stock before allowing the user to place an order.
 
-1. Imagine you have a list of products in an e-commerce application, and you want to check if all products are in stock before allowing the user to place an order.
+## Array.find() / Array.findLast() / Array.findIndex() / Array.findLastIndex()
+- Imagine you have a list of users or products where you want to find a user or product with specific id.
 
-## Array.find(), Array.findLast() & Array.findIndex(), Array.findLastIndex()
-
-1. Imagine you have a list of users. Now you want to find a user with specific id.
-2. Imagine you have a list of products and you want to find the index of a product with a specific ID. You can use Array.findIndex()
+## Array.indexOf() vs Array.findIndex()?
+- Array.indexOf() looks for a specific element exactly equal to the argument [It uses strict equality check].
+- Array.findIndex() accepts a callback function that is used for searching based on a condition.
 
 ## Array.copyWithin()
-
 https://www.javaguides.net/2019/04/javascript-array-copywithin-method.html

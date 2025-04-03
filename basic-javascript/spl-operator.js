@@ -23,7 +23,7 @@ processObject(obj2); // Output: Name: Jane, Age: 0, Country: Canada
 processObject(obj3); // Output: Name: Alex, Age: 0, Country: Australia
 
 
-// 2. Optional Chaining Operator - to access nested object properties safely w/ worrying about null or undefined properties.
+// 2. Optional Chaining Operator
 
 const users = [
   {

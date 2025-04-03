@@ -58,15 +58,4 @@ async function main() {
 }
 
 main();
-
 */
-
-let cart = ["Pants", "Kurta", "Jeans", "Shirts"];
-
-api.createOrder(cart, function () {
-  api.proceedToPayment(function () {
-    api.showOrderSummary(function () {
-      api.updateWallet();
-    });
-  });
-});

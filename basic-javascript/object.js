@@ -1,4 +1,3 @@
-// 1. Creating Objects w/ Object Literal Method
 const person = {
   firstname: "Keerthivasan",
   lastname: "Mani",
@@ -30,125 +29,52 @@ for (const key in person) {
   }
 }
 
-const student = {};
-student.name = "Prakash";
-student.rank = "1st";
-console.log("Displaying Student Object : ", student);
-
-// 2. Creating an Object w/ new keyword
-const car = new Object();
-car.model = "2015";
-car.name = "Volvo";
-car.price = 10_00_000;
-console.log("Displaying Car Object : ", car);
-
-// Accessing the Object values using bracket, dot notation, object.values() & JSON.stringify(object name)
-
-console.log(`student.rank : `, student.rank);
-console.log('person["address"].city : ', person["address"].city);
-console.log("Object.values(car) : ", Object.values(car));
-
 person.fullname = person.fullname.toString();
 console.log("JSON.stringify(person) :", JSON.stringify(person));
 
-// Writable example
-const obj = {};
-Object.defineProperty(obj, "x", {
-  value: 42,
-  writable: false, // Cannot be changed
-});
+// OBJECT METHODS REFERENCES
 
-obj.x = 100; // Attempting to change the value
-console.log(obj.x); // Output: 42 (value remains unchanged)
+// 1. Object.assign(target, ...sources) - Returns the targeted object
+// a. Copying only enumerable properties and own properties of an object.
+// b. Overwriting values from left to right
+var source1 = { a: 10 };
+Object.defineProperty(source1, "a", { value: 10, enumerable: false });
 
-//Configurable example
-const obj = {};
-Object.defineProperty(obj, "x", {
-  value: 42,
-  configurable: false, // Cannot be reconfigured or deleted
-});
+var source2 = { b: 20 };
+var source3 = { c: 30 };
+var source4 = { d: 40 };
 
-Object.defineProperty(obj, "x", {
-  writable: true, // Attempting to reconfigure the property
-});
+var target = Object.assign({ w: 40 }, source1, source2, source3, source4);
+console.log(target);
+// var source5 = Object.create(source4)
+// var target = Object.assign({ w: 40 }, source1, source2, source3, source5);
 
-delete obj.x; // Attempting to delete the property
-console.log(obj.x); // Output: 42 (property remains)
+var origin1 = { x: 10, y: 20, z: 30 };
+var origin2 = { w: 15, z: 45, x: 25 };
+var origin3 = { t: 45, x: 45, y: 80 };
+var goal = Object.assign({ t: 40 }, origin1, origin2, origin3);
+console.log(goal); // Expected Output: { t: 45, x: 45, y: 80, z: 45, w: 15 }
 
-//Enumerable example
-const obj3 = {
-  x: 42,
-  y: 100,
+// 2. Object.entries(object) - Returns the nested array of key-value pairs
+const product = {
+  name: "Wireless Headphones",
+  price: 49.99,
+  category: "Electronics",
 };
 
-Object.defineProperty(obj3, "y", {
-  enumerable: false, // Not enumerable
+const pairs = Object.entries(product);
+// Since we pass an array of values as the first argument, array destructuring allows us to easily log the keys and values.
+pairs.forEach(([key, value]) => {
+  console.log(key, value);
 });
 
-for (let key in obj3) {
-  console.log(key); // Output: 'x' (y is not enumerated)
-}
+// a. If you pass string, it will return indices as key and value as each occurrence of characters
+// b. Other than strings, if you pass any other primitive datatypes, it will return empty [] array
+// c. If you pass null/undefined, this will throw a TypeError.
+// d. You can convert an object to a map()
+console.log(Object.entries("Apple"));
+console.log(Object.entries(1234));
 
-console.log(Object.keys(obj3)); // Output: ['x'] (y is not included)
-
-// Object Constructor
-// Creating Object Constructor Function
-function Person(firstName, lastName, age, location) {
-  this.firstname = firstName;
-  this.lastname = lastName;
-  this.age = age;
-  this.location = location;
-
-  //Adding a property to Object Constructor, which can be default value as well.
-  this.isMarried = true;
-
-  //Adding a method to Object Constructor
-  this.changeName = function (name) {
-    this.lastname = name;
-  };
-}
-
-//Creating Objects
-const person1 = new Person("Keerthivasan", "Mani", 26, "Trichy");
-const person2 = new Person("Karthick", "Murugan", 25, "Bangalore");
-
-//Displaying the person objects
-console.log("Person 1 : ", person1);
-console.log("Person 2 : ", person2);
-
-//Adding property to Object - [Person 1]
-person1.email = "keerthivasan@gmail.com";
-console.log("After adding a new property to Person 1  Object: ", person1);
-console.log(
-  "There will be no change in Person 2 Object, if you check: ",
-  person2
-);
-
-//Adding a method to Object - [Person 1]
-person1.fullName = function () {
-  return this.firstname + " " + this.lastname;
-};
-console.log(
-  "After adding a new method to Person 1 Object : ",
-  person1.fullName()
-);
-
-//Calling the ChangeName function
-person1.changeName("Jackson");
-console.log("Updated last name of person1 object: ", person1);
-
-//Adding a property to Object Constructor using Object Prototype - [similarly, add method to it]
-Person.prototype.pincode = 639101;
-console.log(
-  "After adding a new property to Object Constructor for Person 1: ",
-  person1
-);
-console.log(
-  "After adding a new property to Object Constructor for Person 2: ",
-  person2
-);
-
-// Object Methods Manipulation
 let student = {
   name: "Heidi Kennedy",
   age: 21,
@@ -157,182 +83,81 @@ let student = {
   marks: {
     Maths: 95,
     Science: 100,
-    English: 97,
   },
 };
 
-let studentinfo = {
-  result: "pass",
-  rank: 2,
-};
+// Object.defineProperty() | Object.keys()
+Object.defineProperty(student, "grade", { value: "A", enumerable: false });
+console.log(Object.keys(student));
+console.log(Object.getOwnPropertyNames(student));
 
-//Changing the enumerable property value to check Object.assign() method
-Object.defineProperty(studentinfo, "rank", {
-  enumerable: false,
-});
 
-console.log("1. Object.keys(student) : ", Object.keys(student));
-console.log("2. Object.values(student) : ", Object.values(student));
-console.log("3. Object.entries(studentinfo) : ", Object.entries(studentinfo));
-console.log(
-  "4. Object.getOwnPropertyNames(studentinfo) : ",
-  Object.getOwnPropertyNames(studentinfo)
-);
+// Object.preventExtension() - No addition but allows modification and deletion.
+Object.preventExtensions(student);
+student.name = "Putnam Derek";
+student.locality = "Colorado";
+delete student.subjects;
+console.log("Object.preventExtension() : ", student);
+console.log("Object.isExtensible(student) : ", Object.isExtensible(student)); // To check whether the object is extensible or not.
 
-console.log(
-  '5. Object.getOwnPropertyDescriptor(student, "name") : ',
-  Object.getOwnPropertyDescriptor(student, "name")
-);
-
-// Object.preventExtensions() & isPreventExtensible()
-Object.preventExtensions(studentinfo);
-studentinfo.percentage = 81;
-studentinfo.rank = 3;
-delete studentinfo.result;
-console.log(
-  "6. Object.preventExtensions() : ",
-  studentinfo,
-  Object.isExtensible(studentinfo)
-);
-
-let combinedObject = Object.assign({}, student, studentinfo);
-console.log(combinedObject);
-
-console.log(Object.getOwnPropertyDescriptors(student));
-
-Object.defineProperty(student, "name", {
-  value: "Mark Kennedy",
-});
-
-console.log(
-  "After modification of student's name using Object.defineProperty() : ",
-  student.name
-);
-
-Object.defineProperties(student, {
-  name: {
-    value: "Rick Stalker",
-  },
-  age: {
-    value: 45,
-  },
-});
-
-console.log(student);
-
-//Object.seal() & isSealed()
+// Object.seal() - No addition and deletion but allows modification
 Object.seal(student);
 student.grade = "B";
-delete student.grade;
+delete student.subjects;
 student.email = "rick@gmail.com";
-console.log("8. Object.seal() : ", student, Object.isSealed(student));
+console.log("Object.seal() : ", student);
+console.log("Object.isSealed() : ", Object.isSealed(student)); // To check whether the object is sealed or not.
 
-//Object.freeze() & isFrozen()
+// Object.freeze() - No addition, modification and deletion
 Object.freeze(student);
 delete student.grade;
 student.grade = "B";
 student.email = "rick@gmail.com";
-console.log("7. Object.freeze() : ", student, Object.isFrozen(student));
+console.log("Object.freeze() : ", student);
+console.log("Object.isFrozen() : ", Object.isFrozen(student)); // To check whether the object is frozen or not.
+// deep freeze of an object
+for (let key in student) {
+  if (typeof student[key] === "object") {
+    Object.freeze(student[key]);
+  } else {
+    Object.freeze(student);
+  }
+}
 
-//Object.create()
-let employee = {
-  name: "Keerthivasan",
-  age: 27,
-  address: {
-    city: "Trichy",
-    pincode: 639101,
-  },
-  greet() {
-    console.log("Hello" + " " + this.name);
-  },
+student.name = "Keerthi";
+student.marks.Maths = "100";
+student.subjects[1] = "Javascript";
+console.log(student);
+
+// Object.propertyIsEnumerable("key") - [This is not a static method]
+Object.defineProperty(student, "grade", { enumerable: false });
+console.log(student.propertyIsEnumerable("name"));
+console.log(student.propertyIsEnumerable("grade"));
+
+// Object.getOwnPropertyNames(object) - Returns an array with the properties of an object.
+const defaultProperties = Object.getOwnPropertyNames(Object.prototype);
+for (let property of defaultProperties) {
+  console.log(property);
+}
+
+// key as numeric values
+var temp = {
+  1.1: "Keerthivasan",
+  2: "Jackson",
+  true: "True statement",
 };
 
-let worker = Object.create(employee);
-worker.greet();
-worker.name = "Harish";
-worker.greet();
-console.log(worker.name);
-console.log(worker);
+console.log(temp["1.1"]);
+console.log(temp[2]);
+console.log(temp.true);
 
-//Prototype and prototypal inheritance
-let parent = {
-  name: "Keerthivasan",
-  age: 27,
-  address: {
-    city: "Trichy",
-    pincode: 639101,
-  },
-  greet() {
-    console.log("Hello" + " " + this.name);
-  },
+// Computed Property - we can have variable value as property in object
+// white spaces are allowed between words
+let machineName = 'machine name';
+let machine = {
+    [machineName]: 'server',
+    'machine hours': 10000
 };
-
-let child = Object.create(parent);
-// let child = Object.create(null) or let child = Object.create({}) //Creating an empty object
-child.name = "Harish";
-// child.email = "hari@yahoo.com"
-console.log(Object.getPrototypeOf(child) === parent);
-console.log(child);
-console.log(parent.isPrototypeOf(child));
-
-//INTERVIEW QUESTIONS:
-// Object key as numbers
-var numObject = {
-    1.1: "Keerthivasan",
-    2: "Jackson",
-    true: "True statement"
-}
-
-console.log(numObject["1.1"]);
-console.log(numObject[2]);
-console.log(numObject.true);
-
-let objectKey = {
-  numObject: "Jackie",
-  age: 28
-}
-
-console.log(objectKey)
-
-//Object.create() Explanation with syntax and example:
-//Object.create(prototype, new properties with descriptors)
-let student1 = {
-    firstname: "keerthivasan",
-    lastname: "mani",
-    age: 26,
-    location: "trichy",
-    printFullname(){
-        console.log("Fullname is : " + (this.firstname + " "+ this.lastname))
-    }
-}
-
-console.log(Object.getOwnPropertyDescriptor(student1, "age"))
-Object.defineProperty(student1, "age", {
-    value: 26,
-    enumerable: false
-})
-
-student1.printFullname()
-
-let student2 = Object.create(student1, {
-    firstname: {
-        value: "lakshashree"
-    },
-    lastname: {
-        value: "Sagayaraja"
-    },
-    email: {
-        value:"student2@gmail.com",
-    },
-    phone:{
-        value: 7010989247
-    }
-})
-
-console.log("student1: ", student1)
-console.log("student2: ", student2)
-student2.printFullname()
-console.log(student2.email)
-console.log(student1.email)
-console.log("student1.age: ", student1.age);
-console.log("student2.age: ", student2.age);
+console.log(machine[machineName]);
+console.log(machine['machine hours']);
+console.log(machine["machine name"])
