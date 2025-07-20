@@ -47,7 +47,7 @@ const transformedData = dataContainer.reduce((acc, item) => {
 }, {});
 console.log(transformedData); // Output: { a: 1, b: 2, c: 3 }
 
-// 3. Grouping data based on certain object key:values
+// Example 3
 const person = [
   { name: "John", age: 30, city: "New York" },
   { name: "Jane", age: 25, city: "London" },
@@ -67,7 +67,7 @@ const GroupPersonData = person.reduce((acc, curr, index, array) => {
 }, {});
 console.log(GroupPersonData);
 
-// 4. Grouping array of object values
+// Example 4
 const data = [
   { Phase: "Phase 1", Step: "Step 1", Task: "Task 1", Value: "5" },
   { Phase: "Phase 1", Step: "Step 1", Task: "Task 2", Value: "10" },

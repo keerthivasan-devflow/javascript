@@ -1,15 +1,6 @@
-// 1. Closure implementation - accessing variables inside the function, but which is actually declared outside function.
-function outer() {
-  let text = "Keerthivasan is a React Developer";
-  function inner() {
-    console.log(text);
-  }
-  inner();
-}
-outer();
 
-/* 2. Closure - Here actually we're returning the inner function to the global scope and trying to call that function
-    and also trying to access variables from the outer function scoped variables here. */
+// Closure - Here actually we're returning the inner function to the global scope and trying to call that function
+// and also trying to access variables from the outer scoped function variables.
 function outer() {
   let text = "Keerthivasan is a React Developer";
   return function () {

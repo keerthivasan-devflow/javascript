@@ -29,9 +29,6 @@ for (const key in person) {
   }
 }
 
-person.fullname = person.fullname.toString();
-console.log("JSON.stringify(person) :", JSON.stringify(person));
-
 // OBJECT METHODS REFERENCES
 
 // 1. Object.assign(target, ...sources) - Returns the targeted object

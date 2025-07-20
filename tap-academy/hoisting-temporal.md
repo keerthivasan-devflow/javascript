@@ -1,4 +1,5 @@
-## Hoisting
+## Hoisting 
+
 In JavaScript, the concept of hoisting refers to a feature where variable and function declarations are moved 
 to the top of their containing scope during the execution phase. When a JavaScript program starts running, it 
 creates different segments in memory, primarily the **stack** and **heap**. The stack is where JavaScript code is 

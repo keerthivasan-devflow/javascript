@@ -1,30 +1,3 @@
-let numbers = [1, 2, 3, 4, 5];
-
-// arr.splice(startIndex, deleteCount, ...values)
-// If no arguments are provided, it doesn't remove any elements from the original array, leaving the array unchanged.
-// console.log(numbers.splice());
-// console.log(numbers);
-
-// If you provide only startIndex, arr.splice() returns the removed elements from the array and affects the original array.
-// console.log(numbers.splice(3))
-// console.log(numbers)
-
-// If you provide deleteCount as negative integer arr.splice() will not remove any elements from the original array.
-// console.log(numbers.splice(-4, -2))
-// console.log(numbers)
-
-// If you provide deleteCount as negative integer and try to add elements, there will be no deletion only adds the new elements
-// console.log(numbers.splice(-4, -2, 100, 200))
-// console.log(numbers)
-
-// console.log(numbers.splice(undefined))
-// console.log(numbers.splice(NaN))
-// console.log(numbers.splice(null))
-// console.log(numbers.splice(false))
-// console.log(numbers.splice(true))
-// console.log(numbers.splice(Infinity)) // Similiar to no arguments provided to arr.splice()
-// console.log(numbers)
-
 // Why do we need array in programming?
 let shoppingCart = [];
 function addToCart(item) {
@@ -38,6 +11,68 @@ addToCart("headset");
 addToCart("laptop");
 addToCart("travel bag");
 console.log(shoppingCart);
+
+// Nested Array
+const cars = [
+  { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+  { name: "BMW", models: ["320", "X3", "X5"] },
+  { name: "Fiat", models: ["500", "Panda"] },
+];
+
+for (let k in cars) {
+  let models = cars[k].models;
+  console.log(cars[k].name);
+  for (let nk in models) {
+    console.log(cars[k].models[nk]);
+  }
+}
+
+for (let carName of cars) {
+  console.log(carName.name);
+  for (let model of carName.models) {
+    console.log(model);
+  }
+}
+
+// Sorting an array using comparison function
+function compareNumeric(a, b) {
+  if (a > b) return 1;
+  if (a == b) return 0;
+  if (a < b) return -1;
+}
+
+let numeric = [4, 1, 2, 3];
+numeric.sort(compareNumeric);
+console.log(numeric);
+
+// let numbers = [1, 2, 3, 4, 5];
+// arr.splice(startIndex, deleteCount, ...values)
+// If no arguments are provided, it doesn't remove any elements from the original array, leaving the array unchanged.
+// console.log(numbers.splice());
+// console.log(numbers);
+
+// If you provide only startIndex, arr.splice() returns the removed elements from the array and affects the original array.
+// console.log(numbers.splice(3))
+// console.log(numbers)
+
+// If you provide both deleteCount and startIndex as negative integer arr.splice() 
+// will not remove any elements from the original array.
+
+// console.log(numbers.splice(2, -2));
+// console.log(numbers);
+// console.log(numbers.splice(-2, -2));
+// console.log(numbers);
+
+// If you provide deleteCount as negative integer and try to add elements, there will be no deletion only adds the new elements
+// console.log(numbers.splice(-4, -2, 100, 200))
+// console.log(numbers)
+
+// console.log(numbers.splice(undefined)) // deleted the entire array
+// console.log(numbers.splice(NaN)) // deleted the entire array
+// console.log(numbers.splice(null)) // deleted the entire array
+// console.log(numbers.splice(false)) // deleted the entire array because false = 0th index
+// console.log(numbers.splice(true)) // from 1st index elements will be removed
+// console.log(numbers.splice(Infinity)) // Similiar to no arguments provided to arr.splice(), therefore there will be no deletion
 
 // Removing a particular item from an array
 var number = [10, 20, 30, 40];
@@ -146,13 +181,20 @@ console.log(groupedObjects);
 // Appending certain text to existing each element of the array using Array.forEach() method
 const fruits = ["orange", "apple", "pomegranate"];
 fruits.forEach((fruit, index, array) => {
-  // It accesses the array parameter directly to modify the current element. 
+  // It accesses the array parameter directly to modify the current element.
   // It prepends "Sweet" to each fruit name and assigns it back to the same index in the fruits array.
   array[index] = "Sweet" + fruit;
 });
 console.log(fruits);
 
-const vegies = ["Brinjal", "Potato", "Brinjal", "Carrots", "Carrots", "Brinjal"];
+const vegies = [
+  "Brinjal",
+  "Potato",
+  "Brinjal",
+  "Carrots",
+  "Carrots",
+  "Brinjal",
+];
 console.log("vegies.length : ", vegies.length);
 console.log("vegies.slice() : ", vegies.slice());
 console.log("vegies.slice(0) : ", vegies.slice(0));
@@ -167,7 +209,6 @@ console.log("vegies.slice(null, null) : ", vegies.slice(null, null));
 console.log("vegies.slice(null, undefined) : ", vegies.slice(null, undefined));
 console.log("vegies.slice(-2, 5) : ", vegies.slice(-2, 5));
 console.log("vegies.slice(5, -2) : ", vegies.slice(5, -2));
-
 
 const arrayLike = {
   length: 3,

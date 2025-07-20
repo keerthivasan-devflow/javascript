@@ -30,6 +30,8 @@
 
 - What does the new() operator do in that context?
     - It just creates an empty object
+        `function Student() {}`
+        `console.log(new Student());`
     - It assigns all the values passed to the constructor
     - Eventually return 'this' internally
     - new() also make sure that the this variable is pointing out the newly created empty object

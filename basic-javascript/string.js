@@ -1,18 +1,3 @@
-
-let SingleQuoteText = 'Hello Keerthi, How are you ?'
-let DoubleQuoteText = "Raju is very notorious guy"
-let BackticksText = `Charles Babbage is the father of computer`
-let SingleQuotes_In_SingleQuotes = "'Mahatma Gandhiji' is a hard working guy";
-let SingleQuotes_In_DoubleQuotes = "'Computer' is a fast elctronic calcultaing machine"
-let SingleQuotes_In_Bacticks = `'Tajmahal' is one of the seven wonders of the world`
-
-console.log("SingleQuoteText : ", SingleQuoteText)
-console.log("DoubleQuoteText : ", DoubleQuoteText)
-console.log("BackticksText : ", BackticksText)
-console.log("SingleQuotes_In_SingleQuotes : ", SingleQuotes_In_SingleQuotes);
-console.log("SingleQuotes_In_DoubleQuotes : ", SingleQuotes_In_DoubleQuotes)
-console.log("SingleQuotes_In_Bacticks : ", SingleQuotes_In_Bacticks)
-
 var text_ToFindTextLength = "Banana"
 var text_ToFindTextLength_With_EscapeSequence = '\'Laksha\''
 var text_ToFindTextLength_EmptyString_withoutSpace = ""
@@ -123,18 +108,6 @@ console.log(sliceString.substr(-5))
 console.log(sliceString.substr(2,0))
 console.log(sliceString.substr(2, -5))
 
-var textSplit = "He is nice guy"
-console.log(textSplit.split())
-console.log(textSplit.split(""))
-console.log(textSplit.split(" "))
-
-var fruits = "Fruits"
-var flowers = "Flowers"
-var animals ="Animals"
-var birds = "Birds"
-console.log(fruits.concat(" ",flowers))
-console.log(fruits.concat(" ", flowers, " ", animals))
-console.log(fruits.concat(" ", flowers, " ", animals," ", birds))
 
 var trimLeft = "         Hello Trim Left..."
 var trimRight  = "Jack is back         "
@@ -157,8 +130,6 @@ console.log("text.length : ", text.length)
 
 console.log('string.indexOf() : ', string.indexOf())
 console.log('string.indexOf("") : ', string.indexOf(""))
-console.log('text.indexOf(" ") : ', text.indexOf(" "))
-console.log('string.indexOf(" ") : ', string.indexOf(" "))
 
 console.log('string.indexOf("",17) : ', string.indexOf("",17))
 console.log('string.indexOf("",32) : ', string.indexOf("",32))
@@ -174,8 +145,6 @@ console.log('string.indexOf("d", -10) : ', string.indexOf("d", -10))
 
 console.log('string.lastIndexOf() : ', string.lastIndexOf())
 console.log('string.lastIndexOf("") : ', string.lastIndexOf(""))
-console.log('text.lastIndexOf(" ") : ', text.lastIndexOf(" "))
-console.log('string.lastIndexOf(" ") : ', string.lastIndexOf(" "))
 
 console.log('string.lastIndexOf("",17) : ', string.lastIndexOf("",17))
 console.log('string.lastIndexOf("",32) : ', string.lastIndexOf("",32))
@@ -192,17 +161,10 @@ console.log('string.lastIndexOf("d", -10) : ', string.lastIndexOf("d", -10))
 
 /*****************************************************************************************/
 
-console.log(text.toUpperCase())
-console.log(text.toLowerCase())
-console.log(text.toLocaleUpperCase())
-console.log(text.toLocaleLowerCase())
-
-var replaceText = "dog dog Dog"
-console.log(replaceText.replace("d","F"))
-console.log(replaceText.replace(/d/g,"F"))
-console.log(replaceText.replace(/d/gi,"F"))
-console.log(replaceText.replaceAll("d","F"))
-console.log(replaceText.replaceAll(/d/gi,"F"))
+const sentence = "The sky is green. The ocean is also green.";
+console.log(sentence.replace("green", "blue"));
+console.log(sentence.replaceAll("green", "blue"));
+console.log(sentence.replaceAll(/green/g, "blue"));
 
 // If the negative index is greater than or equal to the length of the string, it starts searching from the beginning of the string.
 var includesText = "Japan is one of the country"

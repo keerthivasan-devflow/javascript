@@ -24,3 +24,6 @@
 **Interview Questions** 
 - https://github.com/sudheerj/javascript-interview-questions
 - https://github.com/yangshun/top-javascript-interview-questions
+
+
+- Primitive vs Non-Primitive Datatypes in Javascript - https://dev.to/mrizwanashiq/primitive-and-non-primitive-56n8
