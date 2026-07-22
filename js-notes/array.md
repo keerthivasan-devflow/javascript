@@ -1,21 +1,3 @@
-- How can you convert an array into a string? What are two different ways to do this?
-- How to recognize an array - 3 ways
-
-## Memory Representation
-
-- JavaScript arrays are specialized objects with integer-based keys. Internally, an array like `let arr = [10, 20, 30]` is treated as:
-
-```js
-  {
-    "0": 10,
-    "1": 20,
-    "2": 30,
-    length: 3
-  }
-```
-
-- JavaScript uses automatic garbage collection. When an array or its elements are no longer referenced, memory is reclaimed.
-
 ## Why is it faster to work with the end of an array than with its beginning?
 
 - Methods push/pop run fast, while shift/unshift are slow
@@ -64,10 +46,6 @@ Note: [] returns ""
   - The keyword const is a little misleading
   - It does NOT define a constant array. It defines a constant reference to an array
   - Because of this, we can still change the elements of a constant array
-
-## Array.copyWithin()
-
-https://www.javaguides.net/2019/04/javascript-array-copywithin-method.html
 
 ## Array.sort()
 

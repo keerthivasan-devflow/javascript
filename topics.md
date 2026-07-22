@@ -97,6 +97,8 @@
 - How To Clear An Array
 - Associative Array vs Indexed Array
 - Sparse Array vs Dense Array
+- Array To String Conversion
+  - toString () vs Array.join()
 - Array References (Total - 45)
 
 # Objects
@@ -169,7 +171,7 @@
 - Function Composition
 - Recursive Function
 - Generator Functions
-- toString ()
+- toString()
 - arguments. length property
 - Unary function – [validation testing, event handling, currying] Monadic
 - Binary Function vs Polyadic Function
