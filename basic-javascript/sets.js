@@ -1,87 +1,69 @@
-//1. How to create/define sets
+// Example 1: Define set
 const fruits = new Set(["Apple", "Kiwi", "Mango", "Orange", "Grapes"]);
 
-//2. Printing the sets values
+// Example 2: Get the values of set
 console.log(fruits);
 console.log([...fruits]);
 console.log(Array.from(fruits));
 console.log(Array.of(...fruits));
-
 for (let fruit of fruits) {
   console.log(fruit);
 }
 
-//3. How to add the values to the existing set
-//Adding mixed type values to the set
-
-fruits.add(true);
+// Example 3: Add an item to an existing set
 fruits.add(false).add(781).add(8034);
-console.log([...fruits]);
 
-//4. How to delete the value from the sets
+// Example 4: Delete set item
 fruits.delete("Mango");
-fruits.delete(false);
-console.log([...fruits]);
 
-//5. How to find the size of fruits
+// Example 5: Check set size
 console.log(fruits.size);
 
-//6. How to check whether the item exist or not
+// Example 6: Check whether an item exist or not in the set
 console.log(fruits.has("Kiwi"));
-console.log(fruits.has("Green Apple"));
 
-//8. How to acces the first element of array
-console.log([...fruits][0]);
-console.log(Array.from(fruits)[2]);
-
-//7. How to clear the set
+// Example 7: Clear the set completely
 fruits.clear();
-console.log(fruits);
 
-//WEAK SET:
-const person = new WeakSet();
+// Example 8: Logical set methods
+const A = new Set(["a", "b", "c"]);
+const B = new Set(["b", "c"]);
+const C = new Set();
+const D = new Set("a", "b", "c");
 
-personDetails = {
-  name: "keerthivasan",
-  age: 25,
-  email: "keerthivasan@gmail.com",
-};
+console.log(A.union(B));
+console.log(A.intersection(B));
+console.log(A.difference(B));
+console.log(A.symmetricDifference(B));
 
-carDetails = {
-  nameOftheCar: "Toyato",
-  model: 2018,
-};
+// Example 9: A.isSubsetOf(B)
+// Note: Every element in the LHS set must also exist in the RHS set  → true.
+// A. Empty set rule: new Set().isSubsetOf(anySet) → true.
+console.log(C.isSubsetOf(A));
+// B. Size check rule: If A.size > B.size, A.isSubsetOf(B) → false.
+console.log(A.isSubsetOf(B));
+// C. Equal sets: Subset check returns true in either ways like A.isSubsetOf(B) vs B.isSubsetOf(A)
+console.log(A.isSubsetOf(D));
 
-bankDetails = {
-  bankName: "HDFC",
-  accno: 4521221100389,
-};
+// Example 10: A.isSupersetOf(B)
+// A. Empty Set Rule: Any set is a superset of the empty set.
+const A = new Set(["x", "y"]);
+const empty = new Set();
+console.log(A.isSupersetOf(empty)); // true
 
-person.add(personDetails);
-person.add(carDetails);
-person.add(bankDetails);
+// B. Size Optimization: If A.size < B.size, the method immediately returns false.
+const A = new Set(["a", "b"]);
+const B = new Set(["a", "b", "c"]);
+console.log(A.isSupersetOf(B)); // false
 
-console.log(person);
-console.log(person.has(personDetails));
-person.delete(bankDetails);
-console.log(person);
-console.log(person.length);
+// C. NaN Handling: Uses SameValueZero equality, so NaN equals NaN and +0 equals -0.
+const A = new Set([NaN, +0]);
+const B = new Set([NaN, -0]);
+console.log(A.isSupersetOf(B)); // true
 
-
-//Sets interview questions
-let onlineAvailableUsers = new Set([
-  "kevasan",
-  "prmattap",
-  "hrgurram",
-  "hummanen",
-]);
-console.log(onlineAvailableUsers);
-
-let logicalNumbers = new Set([[174640], [174640], [234412]]);
-console.log(logicalNumbers);
-
-let objects = new Set([
-  { name: "laksha", age: 4 },
-  { name: "laksha", age: 4 },
-]);
-console.log(objects);
+// Example 11: isDisjoinFrom(B)- checks whether two sets share no common elements.
+// Overlap Rule: If even one element matches, result is false.
+// Empty Set Rule: An empty set is disjoint with any set. (Performance Optimization)
+// Performance Optimization: If A.size === 0 or B.size === 0, it immediately returns true.
+// How internally works? - would loop through elements of the smaller set and check membership in the larger set.
+// To minimize work, the algorithm picks whichever set has fewer elements.

@@ -10,8 +10,9 @@ function processObject(obj) {
   const processedName = name ?? "Anonymous";
   const processedAge = age ?? 0;
   const processedCountry = country ?? "Unknown";
-
-  console.log(`Name: ${processedName}, Age: ${processedAge}, Country: ${processedCountry}`);
+  console.log(
+    `Name: ${processedName}, Age: ${processedAge}, Country: ${processedCountry}`,
+  );
 }
 
 const obj1 = { name: "John", age: 30, country: "USA" };
@@ -21,7 +22,6 @@ const obj3 = { name: "Alex", age: undefined, country: "Australia" };
 processObject(obj1); // Output: Name: John, Age: 30, Country: USA
 processObject(obj2); // Output: Name: Jane, Age: 0, Country: Canada
 processObject(obj3); // Output: Name: Alex, Age: 0, Country: Australia
-
 
 // 2. Optional Chaining Operator
 

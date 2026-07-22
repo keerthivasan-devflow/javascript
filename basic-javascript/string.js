@@ -1,282 +1,229 @@
-var text_ToFindTextLength = "Banana"
-var text_ToFindTextLength_With_EscapeSequence = '\'Laksha\''
-var text_ToFindTextLength_EmptyString_withoutSpace = ""
-var text_ToFindTextLength_EmptyString_withSpace = " "
-console.log("Length of Banana: ", text_ToFindTextLength.length)
-console.log("text_ToFindTextLength_With_EscapeSequence: ", text_ToFindTextLength_With_EscapeSequence.length)
-console.log("text_ToFindTextLength_EmptyString_withoutSpace: ", text_ToFindTextLength_EmptyString_withoutSpace.length)
-console.log("text_ToFindTextLength_EmptyString_withSpace: ", text_ToFindTextLength_EmptyString_withSpace.length)
+var fruitName = "Banana";
+var quotedName = "'Laksha'";
+var emptyString = "";
+var spaceString = " ";
 
+console.log("Length of fruitName: ", fruitName.length);
+console.log("Length of quotedName: ", quotedName.length);
+console.log("Length of emptyString: ", emptyString.length);
+console.log("Length of spaceString: ", spaceString.length);
 
-var long_text_break_Backslash = "Hello \`keerthi\` how are you, \
+// 1. Using backslash for line break
+var greetingWithBackslash =
+  "Hello `keerthi` how are you, \
 I am really expecting to meet you soon";
-console.log(long_text_break_Backslash)
+console.log(greetingWithBackslash);
 
-var long_text_break = "Hello keerthi how are you, " +
-"I am really expecting to meet you soon";
+// 2. Concatenating strings
+var concatenatedGreeting =
+  "Hello keerthi how are you, " + "I am really expecting to meet you soon";
 
-var multiline_String = `Hello keerthi
+// 3. Multiline string using template literals
+var multilineGreeting = `Hello keerthi
 how are you?
-what are you doing ?`
+what are you doing ?`;
 
-console.log(multiline_String)
-console.log(long_text_break)
+console.log(multilineGreeting);
+console.log(concatenatedGreeting);
 
-var string_template = `
+// 4. HTML template string
+var htmlStringTemplate = `
 <div>
-<h1>STRING</h1>
-<p>String is used for storing and manipulating text.</p>
-<ul>
-<li>String Templates</li>
-<li>String Literals</li>
-</ul>
+  <h1>STRING</h1>
+  <p>String is used for storing and manipulating text.</p>
+  <ul>
+    <li>String Templates</li>
+    <li>String Literals</li>
+  </ul>
 </div>
-
 `;
 
-document.write(string_template)
+document.write(htmlStringTemplate);
 
-console.log('A' < 'b')
+// 5. Comparing strings: "A" has a lower Unicode value than "b", so this evaluates to true
+console.log("A" < "b");
 
+// Example : String Indexes | str.charAt() | str.at()
+var color = "lightgreen";
+console.log("color[2] : ", color[2]);
+console.log("color[-1] : ", color[-1]);
+console.log("color[null] : ", color[null]);
+console.log("color[true] : ", color[true]);
+console.log("color[undefined] : ", color[undefined]);
 
-var accessText_usingIndex = "Orange"
-console.log("--------- Using Index ---------")
-console.log("accessText_usingIndex[2] : ", accessText_usingIndex[2])
-console.log("accessText_usingIndex[-1] : ", accessText_usingIndex[-1])
-console.log("accessText_usingIndex[null] : ", accessText_usingIndex[null])
-console.log("accessText_usingIndex[true] : ", accessText_usingIndex[true])
-console.log("accessText_usingIndex[undefined] : ", accessText_usingIndex[undefined])
+console.log("color.charAt() : ", color.charAt());
+console.log("color.charAt(2) : ", color.charAt(2));
+console.log("color.charAt(-1) : ", color.charAt(-1));
+console.log("color.charAt(null) : ", color.charAt(null));
+console.log("color.charAt(true) : ", color.charAt(true));
+console.log("color.charAt(undefined) : ", color.charAt(undefined));
 
-console.log("------------ Using charAt() -----------")
-console.log("accessText_usingIndex.charAt() : ", accessText_usingIndex.charAt())
-console.log("accessText_usingIndex.charAt(2) : ", accessText_usingIndex.charAt(2))
-console.log("accessText_usingIndex.charAt(-1) : ", accessText_usingIndex.charAt(-1))
-console.log("accessText_usingIndex.charAt(null) : ", accessText_usingIndex.charAt(null))
-console.log("accessText_usingIndex.charAt(true) : ", accessText_usingIndex.charAt(true))
-console.log("accessText_usingIndex.charAt(undefined) : ", accessText_usingIndex.charAt(undefined))
+console.log("color.at() : ", color.at());
+console.log("color.at(2) : ", color.at(2));
+console.log("color.at(-1) : ", color.at(-1));
+console.log("color.at(null) : ", color.at(null));
+console.log("color.at(true) : ", color.at(true));
+console.log("color.at(undefined) : ", color.at(undefined));
 
-console.log("-------- Using at() ----------------")
-console.log("accessText_usingIndex.at() : ", accessText_usingIndex.at())
-console.log("accessText_usingIndex.at(2) : ", accessText_usingIndex.at(2) )
-console.log("accessText_usingIndex.at(-1) : ",accessText_usingIndex.at(-1))
-console.log("accessText_usingIndex.at(null) : ", accessText_usingIndex.at(null))
-console.log("accessText_usingIndex.at(true) : ", accessText_usingIndex.at(true))
-console.log("accessText_usingIndex.at(undefined) : ", accessText_usingIndex.at(undefined))
+// Example: str.charCodeAt() | str.codePointAt()
+const animal = "Elephant";
+console.log("animal.charCodeAt(1):", animal.charCodeAt(1)); // '108'
+console.log("animal.charCodeAt(-8):", animal.charCodeAt(-8)); // NaN
+console.log("animal.charCodeAt(true):", animal.charCodeAt(true)); // index = 1 → '108'
+console.log("animal.charCodeAt():", animal.charCodeAt()); // index = 0 → '69'
+console.log("animal.charCodeAt(null):", animal.charCodeAt(null)); // index = 0 → '69'
+console.log("animal.charCodeAt(undefined):", animal.charCodeAt(undefined)); // index = 0 → '69'
 
-var SliceJackfruit = "Jackfruit";
-console.log("SliceJackfruit.slice() : ", SliceJackfruit.slice())
-console.log("SliceJackfruit.slice(0) : ", SliceJackfruit.slice(0))
-console.log("SliceJackfruit.slice(2) : ", SliceJackfruit.slice(2))
-console.log("SliceJackfruit.slice(20) : ", SliceJackfruit.slice(20))
-console.log("SliceJackfruit.slice(-4) : ", SliceJackfruit.slice(-4))
-console.log("SliceJackfruit.slice(-46) : ", SliceJackfruit.slice(-46))
-console.log("SliceJackfruit.slice(2, 6) : ", SliceJackfruit.slice(2, 6))
-console.log("SliceJackfruit.slice(6, 2): ", SliceJackfruit.slice(6, 2))
-console.log("SliceJackfruit.slice(-6, -1) : ", SliceJackfruit.slice(-6, -1))
-console.log("SliceJackfruit.slice(-1, -6) : ", SliceJackfruit.slice(-1, -6))
-console.log("SliceJackfruit.slice(-1, 6) : ", SliceJackfruit.slice(-1, 6))
-console.log("SliceJackfruit.slice(1, -6) : ", SliceJackfruit.slice(1, -6))
-console.log("SliceJackfruit.slice(true, false) : ", SliceJackfruit.slice(true, false))
-console.log("SliceJackfruit.slice(false, true) : ", SliceJackfruit.slice(false, true))
-console.log("SliceJackfruit.slice(true, undefined) : ", SliceJackfruit.slice(true, undefined))
-console.log("SliceJackfruit.slice(null, undefined) : ", SliceJackfruit.slice(null, undefined))
-console.log("SliceJackfruit.slice(2, undefined) : ", SliceJackfruit.slice(2, undefined))
-console.log("SliceJackfruit.slice(undefined, 2) : ", SliceJackfruit.slice(undefined, 2))
-console.log("SliceJackfruit.slice(undefined, undefined) : ", SliceJackfruit.slice(undefined, undefined))
+console.log("animal.codePointAt(-8):", animal.codePointAt(-8)); // undefined
 
-var substringText = "God is great";
-console.log("substringText.substring() : ", substringText.substring());
-console.log("substringText.substring(0) : ", substringText.substring(0));
-console.log("substringText.substring(6) : ", substringText.substring(6));
-console.log("substringText.substring(13) : ", substringText.substring(13));
-console.log("substringText.substring(-5) : ", substringText.substring(-5));
-console.log("substringText.substring(2,5) : ", substringText.substring(2, 5));
-console.log("substringText.substring(5,2) : ", substringText.substring(5, 2));
-console.log("substringText.substring(3,3) : ", substringText.substring(3, 3));
-console.log("substringText.substring(false, true) : ", substringText.substring(false, true))
-console.log("substringText.substring(true, false) : ", substringText.substring(true, false))
-console.log("substringText.substring(undefined, 5) : ", substringText.substring(undefined, 5))
-console.log("substringText.substring(null, 4) : ", substringText.substring(null, 4))
-console.log("substringText.substring(-3,-1) : ", substringText.substring(-3,-1))
-console.log("substringText.substring(-45, 3) : ", substringText.substring(-45, 3))
-console.log("substringText.substring(3, -45) : ", substringText.substring(3, -45))
-console.log("substringText.substring(40) : ", substringText.substring(40));
+// Example : str.slice() | str.substring() | str.substr()
+var city = "Bengaluru";
+console.log("city.slice() : ", city.slice());
+console.log("city.slice(0) : ", city.slice(0));
+console.log("city.slice(2) : ", city.slice(2));
+console.log("city.slice(20) : ", city.slice(20));
+console.log("city.slice(-4) : ", city.slice(-4));
+console.log("city.slice(-46) : ", city.slice(-46));
+console.log("city.slice(2, 6) : ", city.slice(2, 6));
+console.log("city.slice(6, 2): ", city.slice(6, 2));
+console.log("city.slice(-6, -1) : ", city.slice(-6, -1));
+console.log("city.slice(-1, -6) : ", city.slice(-1, -6));
+console.log("city.slice(-1, 6) : ", city.slice(-1, 6));
+console.log("city.slice(1, -6) : ", city.slice(1, -6));
+console.log("city.slice(true, false) : ", city.slice(true, false));
+console.log("city.slice(false, true) : ", city.slice(false, true));
+console.log("city.slice(true, undefined) : ", city.slice(true, undefined));
+console.log("city.slice(null, undefined) : ", city.slice(null, undefined));
+console.log("city.slice(2, undefined) : ", city.slice(2, undefined));
+console.log("city.slice(undefined, 2) : ", city.slice(undefined, 2));
+console.log(
+  "city.slice(undefined, undefined) : ",
+  city.slice(undefined, undefined),
+);
 
-console.log(sliceString.substr(5,3))
-console.log(sliceString.substr(0))
-console.log(sliceString.substr(-5))
-console.log(sliceString.substr(2,0))
-console.log(sliceString.substr(2, -5))
+console.log("city.substring() : ", city.substring());
+console.log("city.substring(0) : ", city.substring(0));
+console.log("city.substring(6) : ", city.substring(6));
+console.log("city.substring(13) : ", city.substring(13));
+console.log("city.substring(-5) : ", city.substring(-5));
+console.log("city.substring(2,5) : ", city.substring(2, 5));
+console.log("city.substring(5,2) : ", city.substring(5, 2));
+console.log("city.substring(3,3) : ", city.substring(3, 3));
+console.log("city.substring(false, true) : ", city.substring(false, true));
+console.log("city.substring(true, false) : ", city.substring(true, false));
+console.log("city.substring(undefined, 5) : ", city.substring(undefined, 5));
+console.log("city.substring(null, 4) : ", city.substring(null, 4));
+console.log("city.substring(-3,-1) : ", city.substring(-3, -1));
+console.log("city.substring(-45, 3) : ", city.substring(-45, 3));
+console.log("city.substring(3, -45) : ", city.substring(3, -45));
+console.log("city.substring(40) : ", city.substring(40));
 
+console.log(city.substr(5, 3));
+console.log(city.substr(0));
+console.log(city.substr(-5));
+console.log(city.substr(2, 0));
+console.log(city.substr(2, -5));
 
-var trimLeft = "         Hello Trim Left..."
-var trimRight  = "Jack is back         "
-var trimBoth = "           I am a good guy       "
-console.log(trimLeft)
-console.log(trimLeft.trimStart())
-console.log(trimRight)
-console.log(trimRight.trimEnd())
-console.log(trimBoth.trim())
+// Example : String Trim Methods
+var greetingWithSpaces = "         Hello Rohit!";
+var sentenceWithTrailingSpaces = "Rohit is back to play cricket     ";
+var messySentence = "    Rohit is      a cricketer      ";
 
-var searchText = "I am good guy"
-console.log(searchText.search("g"))
+console.log("Original (left spaces):", greetingWithSpaces);
+console.log("trimStart():", greetingWithSpaces.trimStart());
 
-/*************** String.indexOf() & String.lastIndexOf() Method *********************/
-var string = "dog says bark dog";
-var text = "Banana";
+console.log("Original (right spaces):", sentenceWithTrailingSpaces);
+console.log("trimEnd():", sentenceWithTrailingSpaces.trimEnd());
 
-console.log("string.length : ", string.length)
-console.log("text.length : ", text.length)
+console.log("Original (both sides spaces):", messySentence);
+console.log("trim():", messySentence.trim());
 
-console.log('string.indexOf() : ', string.indexOf())
-console.log('string.indexOf("") : ', string.indexOf(""))
+// Example : Remove leading/trailing spaces AND normalize multiple spaces in the middle
+var cleanedSentence = messySentence.trim().replace(/\s+/g, " ");
+console.log("cleanedSentence : ", cleanedSentence);
 
-console.log('string.indexOf("",17) : ', string.indexOf("",17))
-console.log('string.indexOf("",32) : ', string.indexOf("",32))
-console.log('string.indexOf("", 10) : ', string.indexOf("", 10));
+// Example : String Search Method
+var searchText = "Landslide";
+console.log("Search for 'd':", searcText.search("d")); // returns index of first 'd'
 
-console.log('string.indexOf("dog", 17) : ', string.indexOf("dog", 17))
-console.log('string.indexOf("dog", 32) : ', string.indexOf("dog", 32))
-console.log('string.indexOf("dog", 10) : ', string.indexOf("dog", 10))
+// Pseudocode: Behavior of str.indexOf(searchString, fromIndex)
+var str = "The dog chased another dog in the park.";
+var txt = "Banana";
+console.log("str.length : ", str.length);
+console.log("txt.length : ", txt.length);
 
-console.log('string.indexOf("", -20) : ', string.indexOf("", -20))
-console.log('string.indexOf(" ", -20) : ', string.indexOf(" ", -20))
-console.log('string.indexOf("d", -10) : ', string.indexOf("d", -10))
+console.log("str.indexOf() : ", str.indexOf());
+console.log('str.indexOf("") : ', str.indexOf(""));
 
-console.log('string.lastIndexOf() : ', string.lastIndexOf())
-console.log('string.lastIndexOf("") : ', string.lastIndexOf(""))
+console.log('str.indexOf("", 10) : ', str.indexOf("", 10));
+console.log('str.indexOf("", 39) : ', str.indexOf("", 39));
+console.log('str.indexOf("", 45) : ', str.indexOf("", 45));
 
-console.log('string.lastIndexOf("",17) : ', string.lastIndexOf("",17))
-console.log('string.lastIndexOf("",32) : ', string.lastIndexOf("",32))
+console.log('str.indexOf("dog", 17) : ', str.indexOf("dog", 17));
+console.log('str.indexOf("dog", 10) : ', str.indexOf("dog", 10));
 
-console.log('string.lastIndexOf("dog", 17) : ', string.lastIndexOf("dog", 17))
-console.log('string.lastIndexOf("dog", 32) : ', string.lastIndexOf("dog", 32))
+console.log('str.indexOf("", -20) : ', str.indexOf("", -20));
+console.log('str.indexOf(" ", -20) : ', str.indexOf(" ", -20));
+console.log('str.indexOf("d", -10) : ', str.indexOf("d", -10));
 
-console.log('string.lastIndexOf("", 10) : ', string.lastIndexOf("", 10))
-console.log('string.lastIndexOf("dog", 10) : ', string.lastIndexOf("bark", 10))
+// Pseudocode: Behavior of str.lastIndexOf(searchString, fromIndex)
 
-console.log('string.lastIndexOf("", -20) : ', string.lastIndexOf("", -20))
-console.log('string.lastIndexOf(" ", -20) : ', string.lastIndexOf(" ", -20))
-console.log('string.lastIndexOf("d", -10) : ', string.lastIndexOf("d", -10))
+// Case 1: fromIndex >= str.length
+// if searchString == ""    → return str.length
+// else                     → return index of last occurrence of searchString (searching backward from str.length)
 
-/*****************************************************************************************/
+// Case 2: fromIndex < str.length
+// if searchString == ""    → return fromIndex
+// else                     → return index of last occurrence of searchString at or before fromIndex (or -1 if not found)
 
-const sentence = "The sky is green. The ocean is also green.";
-console.log(sentence.replace("green", "blue"));
-console.log(sentence.replaceAll("green", "blue"));
-console.log(sentence.replaceAll(/green/g, "blue"));
+// Case 3: str.lastIndexOf() with no arguments
+// → equivalent to str.lastIndexOf(undefined)
+// → returns -1 (since "undefined" is not found)
 
-// If the negative index is greater than or equal to the length of the string, it starts searching from the beginning of the string.
-var includesText = "Japan is one of the country"
-console.log(includesText.includes("one"))
-console.log(includesText.includes("kiki"))
-console.log(includesText.includes("is", 6))
+// Case 4: str.lastIndexOf("") with no arguments
+// → returns str.length (empty string is considered to exist at every position, so the last one is at str.length)
 
-// Returns an array of string - Incase there is no match, then it returns NULL
-var matchText = "He is nice doctor who is general doctor, Doctor"
-console.log(matchText.match("doctor"))
-console.log(matchText.match(/doctor/g))
-console.log(matchText.match(/doctor/gi))
+// Case 5: Negative fromIndex
+// → treated as 0
+// if searchString == ""    → return 0
+// else                     → return index of last occurrence of searchString at or before 0 (usually -1 unless first char matches)
 
-var result_MatchAll_Text = matchText.matchAll("doctor")
-var result_MatchAll_Text_Two = matchText.matchAll(/doctor/gi)
-console.log(Array.from(result_MatchAll_Text))
-console.log(Array.from(result_MatchAll_Text_Two))
+var txt = "Banana";
+console.log("txt.length : ", txt.length);
 
-var charAccess = "Elephant"
-console.log("charAccess.charCodeAt(1) : ",charAccess.charCodeAt(1))
-console.log("charAccess.charCodeAt(-8) : ",charAccess.charCodeAt(-8))
-console.log("charAccess.charCodeAt(true) : ",charAccess.charCodeAt(true))
-console.log("charAccess.charCodeAt() : ",charAccess.charCodeAt())
-console.log("charAccess.charCodeAt(null) : ",charAccess.charCodeAt(null))
-console.log("charAccess.charCodeAt(undefined) : ",charAccess.charCodeAt(undefined))
+console.log("txt.lastIndexOf() : ", txt.lastIndexOf());
+console.log('txt.lastIndexOf("") : ', txt.lastIndexOf(""));
 
-//INTERVIEW QUESTIONS
-//1. Removing Duplicates in a string
-let myString = "Haammmzzzaaa";
+console.log('txt.lastIndexOf("", 10) : ', txt.lastIndexOf("", 10));
+console.log('txt.lastIndexOf("", 6) : ', txt.lastIndexOf("", 6));
+console.log('txt.lastIndexOf("a", 10) : ', txt.lastIndexOf("a", 10));
 
-myString = myString
-   .split("")
-   .filter((item, index, array) => array.indexOf(item) === index)
-   .join("");
-   
-console.log(myString); // "Hamza"
+console.log('txt.lastIndexOf("", 4) : ', txt.lastIndexOf("", 4));
+console.log('txt.lastIndexOf("a", 4) : ', txt.lastIndexOf("a", 4));
 
-//2. Finding the ducplicated letters
-var sample = "success";
-function findDuplicatedChars(str) {
-    let repeat="";
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i + 1; j < str.length; j++) {
-            if (str.charAt(i) == str.charAt(j) && repeat.indexOf(str.charAt(j)) == -1) {
-                repeat += str.charAt(i);
-            }
-        }
-    }
-    return repeat;
-}
-console.log(findDuplicatedChars(sample)); //output: sc
+console.log('txt.lastIndexOf("", -20) : ', txt.lastIndexOf("", -20));
+console.log('txt.lastIndexOf(" ", -20) : ', txt.lastIndexOf(" ", -20));
+console.log('txt.lastIndexOf("d", -10) : ', txt.lastIndexOf("d", -10));
 
+// Example : Replace words in a sentence - str.replace() | str.replaceAll()
+const ocean = "The sky is green. The ocean is also green.";
+console.log("replace (first occurrence): ", ocean.replace("green", "blue"));
+console.log("replace (all occurrences): ", ocean.replaceAll("green", "blue"));
+console.log("replace all w/ regex: ", ocean.replaceAll(/green/g, "blue"));
 
-//3. Counting vowels and consonants in a string
-var text = "abcdefghijklmnopqrstuvwxyz"
-var vowels = 0;
-var consonants = 0;
+// Example : Check if a phrase exists in a string - str.includes()
+const country = "Japan is one of the developed countries.";
+console.log("includes 'one': ", country.includes("one")); // true
+console.log("includes 'kiki': ", country.includes("kiki")); // false
+console.log("includes 'is' starting from index 6: ", country.includes("is", 6)); // true
 
-for(i = 0; i< text.length; i++){
-  if(text[i].match(/[aeiou]/)){
-    vowels++
-  }
-  else{
-    consonants++
-  }
-}
+// Example : Find matches in a string - str.match() | str.matchAll()
+const doctor = "He is a nice doctor who is a general doctor, Doctor";
+console.log("match first occurrence: ", doctor.match("doctor")); // returns first match
+console.log("match all lowercase 'doctor': ", doctor.match(/doctor/g)); // returns array of matches
+console.log("match case-insensitive 'doctor': ", doctor.match(/doctor/gi)); // returns all matches regardless of case
 
-console.log(vowels, consonants)
-
-
-//4. Finding the occurence of given letter in a sring
-var text = "He is a very nice person"
-var count = 0
-var givenLetter = "e"
-
-for(let key in text){
-  if(text[key].includes(givenLetter)){
-    count++
-  }
-}
-
-console.log(count)
-
-//5. Find the occurence of each character in a string
-var str = "Hello World";
-var arr = str.split('');
-var occ = {};
-for(var i=0; i<arr.length; i++){
-    if(occ[arr[i]]) {
-      occ[arr[i]]++;
-      }
-    else occ[arr[i]] = 1;
-}
-for(let i in occ){
-    console.log('count of '+i+' -> '+occ[i]); 
-}
-
-var counts = str.split('').reduce(function(dst, c) {
-  dst[c] = (dst[c] || 0) + 1;
-  return dst;
-}, {});
-console.log(counts)
-
-//6. How to remove specific character from the given string 
-var text = "Keerthi"
-console.log(text.replace(/[eri]/g,""))
-
-//7. Reverse a string word by word
-// input: "I evol uoy os !hcum";
-// output: I love you so much!
-let input = "I evol uoy os !hcum";
-let result = input.split(" ").map((element) => {
-  return element.split("").reverse().join("");
-});
-console.log(result.join(" "));
+const matches1 = doctor.matchAll("doctor");
+console.log("matchAll with string:", Array.from(matches1));
+const matches2 = doctor.matchAll(/doctor/gi);
+console.log("matchAll with regex:", Array.from(matches2));

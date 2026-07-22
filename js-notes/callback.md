@@ -1,4 +1,20 @@
-youtube channel - kurimari (javascript tutorial part 20 - callback in js)
+## Synchronous Javascript
+
+- Javascript executes code sequentially
+- One piece of code will block another piece of code
+- Realtime Applications
+  - Payment Authorization on UPI
+  - Online Purchasing through Flipkart or Amazon
+  - ATM Withdraw
+
+## Asynchronous Javascript
+
+- Handling API data | Data Retrieval
+- Handling user input - Event Listeners | User interaction
+- To load media like images, videos
+- Timers and intervals
+
+## YouTube Channel - kurimari (javascript tutorial part 20 - callback in js)
 
 Callback function is a function that passed as a parameter to an another function and this callback function will be
 executed after some operation has been completed.
@@ -20,8 +36,8 @@ Iterating over Arrays: Callback functions can be used with array methods like fo
 
 Timers: Callback functions can be used with timer functions, like setTimeout() and setInterval(), to schedule the execution of code after a specified amount of time.
 
-
 ## Disadvantages of Callback Functions
+
 - **Callback Hell** Nested callbacks can lead to complex and hard-to-read code, a problem known as "callback hell[ “Pyramid of Doom"]."
 - **Error Handling** Error handling in callback-based code can be cumbersome, as each callback needs its own error-handling logic.
 - **Inversion of control** Managing the flow of control in callback-based code can be challenging, especially when dealing with multiple asynchronous operations.

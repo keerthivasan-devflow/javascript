@@ -1,43 +1,51 @@
-const fruits = new Map([
-    ["Apples",500],
-    [1,"First Product"],
-    ["Ravi", true]
-])
+// Example: Map.groupBy(array, callback)
+// Returns a new map where each key is the grouping criterion and each value is an array of elements belonging to that group.
 
-fruits.set("name","Custard Apple")
-console.log([...fruits])
-console.log([...fruits][1][1])
-console.log(fruits.get("Ravi"))
-console.log(fruits.size)
-fruits.delete(1)
-console.log([...fruits])
-for(let [key, value] of fruits.entries()){
-    console.log(key, value)
+// Example 1: Group items by quantity scale.
+const fruits = [
+  { name: "apples", quantity: 300 },
+  { name: "bananas", quantity: 500 },
+  { name: "oranges", quantity: 200 },
+  { name: "kiwi", quantity: 150 },
+  { name: "musambi", quantity: 100 },
+];
+
+function CalculateScale({ quantity }) {
+  if (quantity > 200) return "high";
+  else if (quantity >= 150 && quantity <= 200) return "moderate";
+  else return "low";
 }
-console.log(fruits.has("Ravi"))
 
-// Create Objects
-const apples = { name: "Apples" };
-const bananas = { name: "Bananas" };
-const oranges = { name: "Oranges" };
+const result = Map.groupBy(fruits, CalculateScale);
+console.log(result);
 
-// Create a Map
-const fruit = new Map();
+// Example 2: Group Strings by Length - Grouping is done based on returned value of callback.
+const words = ["one", "two", "three", "four", "five"];
 
-// Add new Elements to the Map
-fruit.set(apples, 500);
-fruit.set(bananas, 300);
-fruit.set(oranges, 200);
+const byLength = Map.groupBy(words, (word) => word.length);
 
-console.log(Array.from(fruit)[0][0].name)
+console.log(byLength.get(3)); // ["one", "two"]
+console.log(byLength.get(4)); // ["four", "five"]
+console.log(byLength.get(5)); // ["three"]
 
-//WEAK MAP
-const list = new WeakMap()
-const obj1 = {}
-const obj2 = {}
-const obj3 = {}
-list.set(obj1,"Apple")
-list.set(obj2,true)
-list.set(obj3, 45)
-console.log(list)
-console.log(list.has(obj2))
+// Example 3:
+// Notice that the keys are objects (restock, sufficient), which is something Object.groupBy() cannot handle.
+const inventory = [
+  { name: "asparagus", type: "vegetables", quantity: 9 },
+  { name: "bananas", type: "fruit", quantity: 5 },
+  { name: "goat", type: "meat", quantity: 23 },
+  { name: "cherries", type: "fruit", quantity: 12 },
+  { name: "fish", type: "meat", quantity: 22 },
+];
+
+const restock = { restock: true };
+const sufficient = { restock: false };
+
+const result = Map.groupBy(inventory, ({ quantity }) =>
+  quantity < 6 ? restock : sufficient,
+);
+
+console.log(result.get(restock));
+// [{ name: "bananas", type: "fruit", quantity: 5 }]
+console.log(result.get(sufficient));
+// [{ name: "asparagus", ...}, { name: "goat", ...}, { name: "cherries", ...}, { name: "fish", ...}]

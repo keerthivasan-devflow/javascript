@@ -4,20 +4,25 @@ function Person(fname, lname, age) {
   this.age = age;
 }
 
-const person1 = new Person("Keerthivasan", "Mani", 27);
-const person2 = new Person("Karthick", "Murugan", 26);
+const p1 = new Person("Keerthivasan", "Mani", 26);
+const p2 = new Person("Karthick", "Murugan", 27);
 
-//Adding property to Object - [Person 1]
-person1.email = "keerthivasan@gmail.com";
-//Adding a method to Object - [Person 1]
-person1.fullName = function () {
+// Example: Instance Property - Add new property to p1.
+p1.email = "keerthivasan@gmail.com";
+p1.fullName = function () {
   return this.firstname + " " + this.lastname;
 };
+console.log(p1);
+console.log(p2);
 
-console.log("After adding a new property to Person 1 : ", person1);
-console.log("No change in person2 ", person2);
+// Example: Static Property - Add a new property or method to the Person object.
+// Because instances cannot inherit the static properties or methods.
+Person.isMarried = true;
+console.log(Person.isMarried); // true
+console.log(p1.isMarried); // undefined
+console.log(p2.isMarried); // undefined
 
-//Adding a property to Object Constructor using Object Prototype - [similarly, add method to it]
+// Example: Prototye Property - Add a new property or method to the prototype property of Person object.
 Person.prototype.pincode = 639101;
-console.log("After adding a new property(pincode) in Person 1: ", person1);
-console.log("After adding a new property(pincode) in Person 2: ", person2);
+console.log(p1);
+console.log(p2);

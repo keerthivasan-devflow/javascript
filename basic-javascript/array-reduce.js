@@ -1,20 +1,19 @@
-// If the array only has one element (regardless of position) and no initialValue is provided, 
-// or if initialValue is provided but the array is empty, the solo value will be returned without calling callbackFn.
+// Case 1: If the array only has one element (regardless of position) and no initialValue is provided, 
+// or if initialValue is provided but the array is empty, the solo value will be returned without calling callback function.
 const getMax = (a, b) => Math.max(a, b);
 [50].reduce(getMax); // 50
 [].reduce(getMax, 1); // 1
 
-// If initialValue is provided and the array is not empty, then the reduce method will 
-// always invoke the callback function starting at index 0
+// Case 2: If initialValue is provided and the array is not empty, then the reduce method will 
+// invoke the callback function starting at index 0.
 [1, 100].reduce(getMax, 50); // 100
 [50].reduce(getMax, 10); // 50
 
-// reduce() skips missing elements in sparse arrays, but it does not skip undefined values.
+// Case 3: reduce() skips missing elements in sparse arrays, but it does not skip undefined values.
 console.log([1, 2, , 4].reduce((a, b) => a + b)); // 7
 console.log([1, 2, undefined, 4].reduce((a, b) => a + b)); // NaN
 
-
-// Example 1
+// Example 1: Count occurrences of each array element. (array of strings)
 const fruitsContainer = [
   "apple",
   "orange",
@@ -24,40 +23,49 @@ const fruitsContainer = [
   "apple",
 ];
 
+// Code Explanation:
+// acc[fruit] is undefined because "apple" hasn’t been seen yet.
+// (undefined || 0) becomes 0.
+// acc["apple"] = 0 + 1 → acc["apple"] = 1.
+// Output: { apple: 3, orange: 2, banana: 1 }
 const fruitCounts = fruitsContainer.reduce((acc, fruit) => {
   acc[fruit] = (acc[fruit] || 0) + 1;
   return acc;
 }, {});
 console.log(fruitCounts);
 
-// acc[fruit] is undefined because "apple" hasn’t been seen yet.
-// (undefined || 0) becomes 0.
-// acc["apple"] = 0 + 1 → acc["apple"] = 1.
-// Output: { apple: 3, orange: 2, banana: 1 }
+// Example 2: Count occurrences of each array element. (array of numbers)
+const numbers = [100, 200, 200, 100, 100, 300, 200, 300, 400, 500];
+const count = {};
+numbers.reduce((acc, curr) => {
+  if (acc[curr]) acc[curr] = acc[curr] + 1;
+  else acc[curr] = 1;
+  return acc;
+}, count);
+console.log(count);
 
-// Example 2
-const dataContainer = [
+// Example 3:
+const data = [
   { key: "a", value: 1 },
   { key: "b", value: 2 },
   { key: "c", value: 3 },
 ];
-const transformedData = dataContainer.reduce((acc, item) => {
+const transformedData = data.reduce((acc, item) => {
   acc[item.key] = item.value;
   return acc;
 }, {});
 console.log(transformedData); // Output: { a: 1, b: 2, c: 3 }
 
-// Example 3
-const person = [
+// Example 4:
+const residents = [
   { name: "John", age: 30, city: "New York" },
   { name: "Jane", age: 25, city: "London" },
   { name: "Jim", age: 35, city: "New York" },
   { name: "Joan", age: 28, city: "London" },
 ];
 
-const GroupPersonData = person.reduce((acc, curr, index, array) => {
+const groupedResidents = residents.reduce((acc, curr) => {
   const key = curr.city;
-  console.log(acc[key]);
   if (!acc[key]) {
     acc[key] = [curr];
   } else {
@@ -65,9 +73,9 @@ const GroupPersonData = person.reduce((acc, curr, index, array) => {
   }
   return acc;
 }, {});
-console.log(GroupPersonData);
+console.log(groupedResidents);
 
-// Example 4
+// Example 5:
 const data = [
   { Phase: "Phase 1", Step: "Step 1", Task: "Task 1", Value: "5" },
   { Phase: "Phase 1", Step: "Step 1", Task: "Task 2", Value: "10" },
@@ -98,7 +106,7 @@ const groupedData = data.reduce((accumulator, currentValue) => {
 const resultValue = Object.values(groupedData);
 console.log(resultValue);
 
-
+// Example 6: 
 const products = [
   { name: "Shirt", category: "Clothing" },
   { name: "Pants", category: "Clothing" },
@@ -123,6 +131,17 @@ const groupedByCategory = products.reduce((acc, currentProduct) => {
 }, {}); // Start with an empty object
 
 console.log(groupedByCategory);
+
+// Example 7: Grouping
+const data = [
+  { id: 1, name: "Alice", department: "HR", salary: 50000 },
+  { id: 2, name: "Bob", department: "HR", salary: 52000 },
+  { id: 3, name: "Charlie", department: "IT", salary: 70000 },
+  { id: 4, name: "David", department: "IT", salary: 72000 },
+  { id: 5, name: "Eve", department: "Finance", salary: 60000 },
+  { id: 6, name: "Frank", department: "Finance", salary: 61000 },
+  { id: 7, name: "Grace", department: "IT", salary: 68000 },
+];
 
 /*
 Code explanation of above program:

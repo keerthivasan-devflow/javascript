@@ -1,36 +1,79 @@
-
-function moveZeroes(nums) {
-  let nonZeroIndex = 0;
-
-  nums.forEach((num, i) => {
-    if (num !== 0) {
-      nums[nonZeroIndex] = num;
-      if (nonZeroIndex !== i) nums[i] = 0;
-      nonZeroIndex++;
-    }
-  });
+// Example 1: Removing a specific item from an array
+var number = [10, 20, 30, 40];
+var givenNumber = 2;
+let index = number.indexOf(givenNumber);
+if (index === -1) {
+  console.log("Number doesn't exist!");
+} else {
+  number.splice(index, 1);
 }
 
-// Example usage:
-let givearr = [0, 1, 0, 3, 12];
-moveZeroes(givearr);
-console.log(givearr); // Output: [1, 3, 12, 0, 0]
+// Example 2: Removing Duplicate elements from an array.
+// A. Set() can be used to remove duplicates from an array
+let colors = ["red", "green", "red", "green", "green", "blue"];
+console.log([...new Set(colors)]);
 
-
-function findPairs(nums, target) {
-  let pairs = [];
-  let seen = new Set();
-
-  for (let num of nums) {
-    let complement = target - num;
-    if (seen.has(complement)) {
-      pairs.push([complement, num]);
-    }
-    seen.add(num);
+// B. Create a new array using arr.forEach()
+let addColors = [];
+colors.forEach((element) => {
+  if (addColors.includes(element)) {
+    console.log(`${element} is already exist`);
+  } else {
+    addColors.push(element);
   }
+});
+console.log("addColors : ", addColors);
 
-  return pairs;
-}
+// C. arr.filter() removes duplicate from an array.
+let letters = ["A", "B", "A", "C", "B"];
+let uniqueChars = colors.filter(
+  (element, index) => letters.indexOf(element) == index,
+);
+console.log("uniqueChars:", uniqueChars);
 
-// Example usage:
-console.log(findPairs([1, 2, 3, 4, 3, 5], 6)); // Output: [[3, 3], [2, 4]]
+// Example 3: Find the occurence of each array element
+let arr = [5, 2, 1, 2, 5, 1, 1, 2, 9, 4];
+let count = {};
+arr.forEach((element) => {
+  // Check whether the current array element already exists as a key in the count object.
+  // If it does, increment its count; otherwise, initialize it to 1.
+  if (count[element]) {
+    count[element] = count[element] + 1;
+  } else {
+    count[element] = 1;
+  }
+});
+console.log(count);
+
+// Example 4: Removing falsy values from an array using the filter() method.
+const falsyValues = ["keerthi", "", 0, true, 2096938, false, null, undefined];
+const truthyValues = falsyValues.filter((value) => value);
+console.log(truthyValues);
+
+// Example 5: Calculate sum of each product.
+const products = [
+  {
+    name: "laptop",
+    price: 5000,
+    count: 2,
+  },
+  {
+    name: "Headset",
+    price: 1500,
+    count: 5,
+  },
+  {
+    name: "Watch",
+    price: 1200,
+    count: 3,
+  },
+];
+const total = products.map((product) => {
+  //   return [product.name, product.price * product.count];
+  return {
+    product_name: product.name,
+    total_product_cost: product.price * product.count,
+  };
+});
+
+console.log(total);
