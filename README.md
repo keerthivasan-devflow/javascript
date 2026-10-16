@@ -25,6 +25,11 @@
 10. Teddy Smith
 11. Proacademy Javascript channel
 
+## Fake API's Lists
+
+1. https://catfact.ninja/
+2. https://api.restful-api.dev/objects
+
 ## Interview Questions
 
 - https://github.com/sudheerj/javascript-interview-questions
@@ -32,19 +37,30 @@
 - https://dev.to/mrizwanashiq/primitive-and-non-primitive-56n8 (Primitive vs Non-Primitive Datatypes)
 - https://www.javaguides.net/2019/04/javascript-array-copywithin-method.html (Array.copyWithin())
 
+## Callback Function
 
-## Spread operator
+1. What is a callback function in JavaScript?
+2. What is the difference between a callback and a higher‑order function?
+3. How do synchronous callbacks differ from asynchronous callbacks?
+4. What are the pros and cons of using callbacks?
+5. What are some real‑time applications of callbacks?
+6. Do callbacks exist in JavaScript even without asynchronous operations?
 
-Example 1 : Working w/ arrays
-let hobbies = ["reading", "cooking"]
-let newHobbies = ["playing games"]
-let mergedHobbies = [hobbies, newHobbies] - This will create a nested array so we need spread operator to unpack elements
-let mergedHobbies = [...hobbies, ...newHobbies]
+## Promises
 
-Example 2 : Working w/ objects
-let user = {
-username: "kevasan",
-password: "keerthi123"
-}
+1. What is a Promise object? Is a Promise mutable or immutable?
+2. What are the different states of a Promise?
+3. What are the key methods of Promises, and how do they work?
+4. What is the executor function in a Promise? When is it invoked?
+5. What are the resolve() and reject() functions?
+6. What is then() and catch()?
+7. What is Promise chaining?
+8. What happens if catch() and then() are misplaced?
+9. Why do we need to pipe data through each then() in Promise chaining?
+10. Can a Promise be cancelled once it’s created?
 
-let extendedUser = {...user, isAdmin: true}
+## Async / Await
+
+1. What is an async function?
+2. Since an async function always returns a Promise, what happens if you explicitly return another Promise inside it? Does that create a “Promise inside a Promise,” or is it flattened automatically?
+3. What is the difference between async/await and Promises in JavaScript

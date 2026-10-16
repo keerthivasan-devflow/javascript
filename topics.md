@@ -73,8 +73,6 @@
 - String Access Through Indexes
 - String Comparison
 - String Pool vs String Interning
-  - For a particular value of a string, there will be only one copy of string that exist in the memory.
-  - Benefits - To make string comparison faster and Memory Optimization.
 - Whether the string be will created in the stack or heap segment?
 - Is there any difference between toString() vs String()?
   - toString() cannot be used on null or undefined, and will throw an error.
@@ -99,7 +97,12 @@
 - Sparse Array vs Dense Array
 - Array To String Conversion
   - toString () vs Array.join()
+- Iterator or Iterator Object
+- Iterables
 - Array References (Total - 45)
+  - Static Methods (4)
+  - Instance Methods (39)
+  - Instance Properties (1)
 
 # Objects
 
@@ -145,27 +148,32 @@
 
 # Functions
 
-- Function Declaration | Function Statement | Function Definition
+- Function Declaration or Function Statement or Function Definition
 - Parameters vs Arguments
+- Return Value - Primitive | Non-Primitive
 - Function Expression or Anonymous Function
 - Named Function Expression
 - Blocked-Scope Function Declaration - [w/ strict mode vs w/o strict mode]
 - Pure vs Impure Function
-- IIFE
+- IIFE (Immediately Invoked Function Expression)
 - Arrow Function
   - If there is only one parameter - No need of parantheses
   - If there is only statement in the body of the function = No need of curly braces and return keyword
 - Method Definition
 - Constructor Function
-- First Class Citizens | Function As Objects
-- call() | apply() | bind()
+- First Class Citizens or Function As Objects
+- Function Borrowing - call() | apply() | bind()
+  - Implicit Binding
+  - Explicit Binding
+  - new Binding _(Classes / Constructors)_
+  - Default Binding
 - Higher Order Function
-- Closures
-- Callback Function
+- Callback Function - Synchronous (Array methods) vs Asynchronous callbacks (Timers)
   - Main Thread Blocking
   - Pros vs Cons of Callback Function
   - Callback Hell - Inversion Of Control
   - Callback Alternatives
+- Closures
 - Function Currying
 - Factory Function
 - Function Composition
@@ -173,12 +181,13 @@
 - Generator Functions
 - toString()
 - arguments. length property
-- Unary function – [validation testing, event handling, currying] Monadic
-- Binary Function vs Polyadic Function
-- Static | Dynamic function
+- Unary Function (or Monadic) – [Validation Testing, Event Handling, Currying]
+- Binary vs Polyadic Function
+- Static vs Dynamic Function
 
 # Classes
 
+- Instance Property
 - Static property and methods
 - Meta property – new. target
 - Computed property
@@ -192,6 +201,10 @@
 
 - Synchronous Javascript
 - Asynchronous Javascript
+- Memory Segements - Stack | Heap
+- Macro Task Queue (Callback Queue)
+- Micro Task Queue (Callbacks related to promises will be registered)
+  - This will get executed when a macro task queue finsishes the execution before the next macro task queue can begin
 - Memory Leak
 - JS Strict mode
 - JS this keyword
@@ -211,11 +224,24 @@
 - Eval Error (deprecated)
 - Silent Errors
 
+# Web API
+
+- Document Object Model
+- Graphics / Multi-media
+- Client-Side Storage
+- Device
+- Communication
+- Timer
+- Fetch
+- Security
+- Other
+
 # ES6 Features
 
 - let / const keyword
 - Symbols
 - Default Parameters
+- Constructor Default Parameters - Arguments as comma separated vs. object
 - Arrow Function
 - Set / WeakSet
 - Map / WeakMap
@@ -232,7 +258,7 @@
   - Spaces can be included between words in object keys.
   - Methods can be written in objects without defining function keyword.
   - Incase object keys and values are same, write it once.
-- Template Literals / Template String / String Templates
+- Template Literals / Template String / String Template Literal
   - String Interpolation
   - Multi-Line String Definition
   - Embed HTML Code
@@ -263,3 +289,26 @@
   - ES6 features
     - Named export and import
     - Default export and import
+
+// -------------------------
+
+// function\* test() {
+// let a = 0;
+// let b = 1;
+
+// let c = a + b;
+
+// while (true) {
+// yield c;
+// a = b;
+// b = c;
+// }
+// }
+
+// let gen = test();
+
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
+// console.log(gen.next());
