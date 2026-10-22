@@ -27,7 +27,7 @@ const FilteredNumbers = numbers.filter((number, index) => {
 });
 console.log(FilteredNumbers);
 
-// Case 3: Use flatMap() method and return an empty array to signify deletion.
+// Case 3: Use flatMap() and return an empty array to signify deletion.
 const FlattenedNumbers = numbers.flatMap((number, index) => {
   if (index < 3) {
     return [number];
@@ -36,7 +36,7 @@ const FlattenedNumbers = numbers.flatMap((number, index) => {
 });
 console.log(FlattenedNumbers);
 
-// Case 4: Using map to reformat objects in an array
+// Case 4: Using map() to reformat objects in an array
 const aquatics = [
   { name: "shark", likes: "ocean" },
   { name: "turtle", likes: "pond" },
@@ -60,6 +60,8 @@ const ReformattedAquatics = aquatics.map((aquatic) => {
 console.log(ReformattedAquatics);
 
 // Case 5: As mentioned previously, this is an anti-pattern.
+// An anti-pattern is a coding practice that may work correctly but is considered a bad approach 
+// because there is usually a cleaner, more efficient, or more maintainable way to do the same thing.
 // If you don't use the return value of map(), use forEach() or a for...of loop instead.
 const products = [
   { name: "sports car" },

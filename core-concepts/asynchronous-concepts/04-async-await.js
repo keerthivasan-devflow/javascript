@@ -1,25 +1,23 @@
 // Example 1: async function will always return a promise
-
-function getUserProfile() {
+async function getUser() {
   return "Bolmeyer Lauren";
 }
 
-// Example 2: try/catch | async/await
-
-async function fetchapi() {
+// Example 2: async-await keyword w/ try-catch block
+async function fetchUser() {
   try {
     const data = await fetch("https://jsonplaceholder.typicode.com/users/1");
     const response = await data.json();
-    console.log(response);
+    return response;
   } catch (err) {
-    console.log(err.message);
+    return err;
   }
 }
 
-fetchapi(); // Case 1
-fetchapi().catch((err) => console.log(err.message)); // Case 2
+fetchUser().then((result) => console.log(result));
+fetchUser().catch((err) => console.log(err.message));
 
-// Example 3: To illustrate difference between promise and async/await
+// Example 3: To illustrate difference between promise and async-await keyword
 const pr1 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("First Promise Resolved!");

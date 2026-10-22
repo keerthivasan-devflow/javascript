@@ -1,17 +1,15 @@
 // 1. Nullish Coalescing Operator - ??
-/*
-Suppose you have a function that takes an object as an argument and expects the object to have certain properties.
- If any of these properties are null or undefined, you want to use default values instead. 
- You can use the nullish coalescing operator to provide these default values:
-*/
 
-function processObject(obj) {
+// Suppose a function accepts an object as an argument and expects it to contain certain properties. If any of these
+// properties are null or undefined, you can use the nullish coalescing operator (??) to provide default values.
+
+function person(obj) {
   const { name, age, country } = obj;
-  const processedName = name ?? "Anonymous";
-  const processedAge = age ?? 0;
-  const processedCountry = country ?? "Unknown";
+  const personName = name ?? "Anonymous";
+  const personAge = age ?? 0;
+  const personCountry = country ?? "Unknown";
   console.log(
-    `Name: ${processedName}, Age: ${processedAge}, Country: ${processedCountry}`,
+    `Name: ${personName}, Age: ${personAge}, Country: ${personCountry}`,
   );
 }
 
@@ -19,11 +17,11 @@ const obj1 = { name: "John", age: 30, country: "USA" };
 const obj2 = { name: "Jane", age: null, country: "Canada" };
 const obj3 = { name: "Alex", age: undefined, country: "Australia" };
 
-processObject(obj1); // Output: Name: John, Age: 30, Country: USA
-processObject(obj2); // Output: Name: Jane, Age: 0, Country: Canada
-processObject(obj3); // Output: Name: Alex, Age: 0, Country: Australia
+person(obj1); // Output: Name: John, Age: 30, Country: USA
+person(obj2); // Output: Name: Jane, Age: 0, Country: Canada
+person(obj3); // Output: Name: Alex, Age: 0, Country: Australia
 
-// 2. Optional Chaining Operator
+// 2. Optional Chaining Operator - ?
 
 const users = [
   {
@@ -52,7 +50,7 @@ const users = [
 const city = users[1].address?.city;
 console.log(city); // Output: undefined (since address is not specified)
 
-// Using optional chaining in a loop to safely access nested properties
+// 3. Logical OR Operator - ||
 users.forEach((user) => {
   const cityName = user.address?.city || "Unknown";
   console.log(`${user.name} lives in ${cityName}`);

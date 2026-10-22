@@ -1,4 +1,4 @@
-// Example 1: Lexical Environment And Scope Chain
+// Example 1: Lexical Environment and Scope Chain
 // GEC and FEC are two different frames in the callstack - How does FEC access "number"?
 let number = 100;
 function test() {

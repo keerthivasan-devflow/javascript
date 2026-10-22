@@ -11,19 +11,20 @@
 - https://es6-features.org/#Constants
 - https://www.jschallenger.com/overview
 
-## YouTube Tutorials / Channels
+## YouTube Tutorials or Channels
 
 1. Tap Academy - To learn javascript from memory point of view
 2. Akshay Shaini - Namaste Javascript season 1, 2
 3. RoadSideCoder - Interview Questions
 4. JAFS Code School Tamil - Regular Expression
-5. Code with guruji – web API’s
+5. Code with guruji – WEB API
 6. Nisha Singla
 7. code.io tamil
 8. UNIQ Technologies
-9. Velmurugan MG - YouTube Channel (Esp'ly for Debounce Concept)
+9. Velmurugan MG - Debounce Concept
 10. Teddy Smith
 11. Proacademy Javascript channel
+12. Andrew Burgess - Iterators, Generators, Iterables
 
 ## Fake API's Lists
 
@@ -64,3 +65,11 @@
 1. What is an async function?
 2. Since an async function always returns a Promise, what happens if you explicitly return another Promise inside it? Does that create a “Promise inside a Promise,” or is it flattened automatically?
 3. What is the difference between async/await and Promises in JavaScript
+
+## Read more
+
+- Iterative methods - Example: arr.find()
+- Mutating methods - arr.copyWithin(), arr.push(), arr.pop() etc.
+- Generic methods - arr.find() method is generic. It only expects the this value to have a length property and integer-keyed properties. Read more about the algorithm like[Prime Number] on the same page.
+- Static Properties or Methods
+- Instance Properties or Methods

@@ -1,3 +1,5 @@
+
+
 // Example: Object.getOwnPropertyNames(object) - Returns an array with the properties of an object.
 const defaultProperties = Object.getOwnPropertyNames(Object.prototype);
 for (let property of defaultProperties) {
@@ -22,8 +24,6 @@ Object.prototype.display = function () {
 
 employee_174641.display();
 employee_174642.display();
-
-
 
 // Example: Object with keys defined as different datatypes (number, float, boolean),
 // which are automatically converted to strings when used as property names.

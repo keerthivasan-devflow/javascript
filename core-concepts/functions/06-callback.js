@@ -1,10 +1,15 @@
 // Example 1: Blocking-Code | Synchronous Single-Threaded
 
+// Here, start and end are fixed values. They do not change after assignment.
+// Date.now() is evaluated again and again on every loop iteration, whereas end remains unchanged.
+// When the condition becomes false, the loop stops and JavaScript executes the console.log("Task 1 Completed").
 function task1() {
-  let start = Date.now();
-  let delay = 5000;
-  let end = start + delay;
+  let start = Date.now(); // 1000 ms
+  let delay = 5000; // 5000 ms
+  let end = start + delay; // 6000 ms
+
   while (Date.now() <= end) {}
+  
   console.log("Task 1 - Completed");
 }
 
@@ -133,9 +138,9 @@ function displayName(name, callback, abc) {
   callback(abc);
 }
 
-let data = 16234;
-let callbackFunc = (data = 0) => console.log("Callback execution! " + data);
-displayName("Keerthivasan", callbackFunc, data);
+let id = 16234;
+let callbackFunc = (id = 0) => console.log("Callback execution! " + id);
+displayName("Keerthivasan", callbackFunc, id);
 displayName("Rick", callbackFunc);
 displayName("Janet", callbackFunc);
 displayName("Walker", callbackFunc);

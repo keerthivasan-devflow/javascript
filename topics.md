@@ -12,20 +12,25 @@
 
 - Variables Introduction
 - Syntax Rules
-- Single | Multiple Variable Declaration vs Initialization
+- Variables Declaration vs Initialization - Single | Multiple Variables
 - Two Types Of Variables - Undeclared | Undefined
 - Two Types Of Values - Fixed Literals | Variable Values
 - Keywords To Declare a Variable (3) - var | let | const
-- Hoisting In Javascript
+- Hoisting
 - Temporal Dead Zone (TDZ)
-- Scope Of Variables - Global | Function | Block or Local | Lexical Scope
+- Scope Of Variables
+  - Global Scope
+  - Function Scope
+  - Block or Local Scope
+  - Lexical Scope
 - Variable Shadowing vs Illegal Shadowing Of Block Scope
 - Lexical Environment
 - Scope Chain
 
 # Datatypes
 
-- Number - BigInteger
+- Number
+- BigInteger
 - String
 - Boolean
 - Array
@@ -85,33 +90,30 @@
 
 # Arrays
 
-- Syntax And Different Ways To Declare An Array
+- Indexed Array vs Associative Array
+- Dense Array vs Sparse Array
+- Syntax And Different Ways to Declare an Array
   - Using Array Literal
-  - Array Constructor
-  - Array()
+  - Array Constructor or Array() - w/ or w/o using 'new' keyword
+  - Array.of()
 - Check Array Length
-- Access Elements Through Index - Get First / Last Element From An Array
-- Change Element Through Index
-- How To Clear An Array
-- Associative Array vs Indexed Array
-- Sparse Array vs Dense Array
-- Array To String Conversion
-  - toString () vs Array.join()
+- Access Elements - Get First or Last Element From an Array
+- Change Element
+- How to Clear an Array
+- Array to String Conversion
+  - toString() vs Array.join()
 - Iterator or Iterator Object
 - Iterables
-- Array References (Total - 45)
-  - Static Methods (4)
-  - Instance Methods (39)
-  - Instance Properties (1)
+- Array References (42)
 
 # Objects
 
-- Creating an object (6)
+- Create an object (6)
   - Object Literal Syntax
-  - new Object()
+  - Object() Constructor - w/ or w/o using 'new' keyword
   - Object.create()
     - Pitfalls of Object.create(null, {...})
-  - Object Constructor / Constructor Function / Function Constructor
+  - Object Constructor or Constructor Function or Function Constructor
   - Factory Function
   - ES6 Class
 - Accessing Objects (4)
@@ -161,6 +163,8 @@
   - If there is only statement in the body of the function = No need of curly braces and return keyword
 - Method Definition
 - Constructor Function
+  - How to add a static, instance property and a property directly to a constructor function.
+- Factory Function
 - First Class Citizens or Function As Objects
 - Function Borrowing - call() | apply() | bind()
   - Implicit Binding
@@ -175,7 +179,6 @@
   - Callback Alternatives
 - Closures
 - Function Currying
-- Factory Function
 - Function Composition
 - Recursive Function
 - Generator Functions

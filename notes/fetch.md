@@ -1,3 +1,39 @@
+## Response Types
+
+1. application/json | response.json()
+2. text/plain | response.text()
+3. text/html | response.text()
+4. application/xml | response.text() or XML parser
+5. image/png | response.blob()
+6. image/jpeg | response.blob()
+7. application/pdf | response.blob()
+
+## To Check or Verify Response Content-Type
+
+- response.headers.get("Content-Type")
+
+## Network Error
+
+A network error occurs when the request cannot successfully communicate with the server. An HTTP error occurs when the server receives the request and responds with an HTTP status indicating a problem. (or when a server sends an HTTP response with an unsuccessful status code)
+
+1. Network errors
+
+- No internet connection.
+- The server cannot be reached.
+- A DNS lookup fails (the domain name cannot be resolved).
+- The connection is blocked or interrupted.
+
+2. HTTP errors
+
+- 400 — `Bad Request` → The request contains invalid data.
+- 401 — `Unauthorized` → Authentication is required or invalid.
+- 403 — `Forbidden` → Access to the resource is denied.
+- 404 — `Not Found` → The requested resource does not exist.
+- 500 — `Internal Server Error` → The server encountered an unexpected problem.
+- 503 — `Service Unavailable` → The server is temporarily unable to handle the request.
+
+## DNS Lookup
+
 Once your application is ready - then the important process is "hoisting" - which means you can put your application on some other computer - which can be available 24/7 - accessed by internet (basically called a server computer) - You will get an IP address - but it is difficult to remember - so get domain name available which is unique and make the domain points to an your IP address - then type domain name in the URL in browser - which redirect to corresponding IP address technically called this process as "DNS"
 
 godaddy - For Domain Name Server (DNS)
@@ -8,28 +44,16 @@ godaddy - For Domain Name Server (DNS)
 
 2. Request object → Encapsulates the URL and options into a single reusable data unit; allows retries, reuse, or sharing across functions without rewriting configuration.
 
-## URL Object
+## URL() Constructor
 
-- Created using the built-in URL constructor.
-- Represents a structured URL with easy access to its components (protocol, hostname, pathname, query parameters, etc.).
-- Useful when you need to manipulate or build URLs dynamically.
-
-When I say a URL object is useful for manipulating or building URLs dynamically, I mean that instead of treating a URL as a plain string, you can break it into parts and programmatically change or construct it. This is especially handy when you need to add query parameters, switch domains, or adjust paths without manually concatenating strings - You don’t have to manually type out the entire URL with query parameters, slashes, and symbols
-
-1. Dynamic query building: Add or remove parameters based on user input.
-2. Safe manipulation: No risk of malformed strings when concatenating.
-   1. Malformed strings - improperly formed text data that breaks encoding rules.
-   2. Encoding rules - guidelines for converting text into byte sequences.
-3. Readable code: Easier to understand than long string concatenations.
-4. Integration with fetch: Pass the object directly to fetch().
+1. This allows you to easily read and modify the components of a URL.
 
 ```js
-// Example 1: Basic URL Object Implementation
+// Example 1: Basic URL Object
 let url = new URL("https://api.restful-api.dev/objects/");
 console.log(url);
 console.log(url.searchParams.get("model")); // Get the "model" parameter from the URL's search string if exists
 
-// output
 URL {
   href: 'https://api.restful-api.dev/objects/',
   origin: 'https://api.restful-api.dev',
@@ -46,20 +70,39 @@ URL {
 }
 ```
 
+2. Useful when you need to manipulate or build URLs dynamically.
+
 ```js
 // Example 2: URL Object | Useful when you need to manipulate or build URLs dynamically.
-const url = "https://example.com/search?category=books&sort=price";
+const URL = new URL("https://example.com/search");
+URL.searchParams.append("category", "books");
+URL.searchParams.append("sort", "price");
 
-const url = new URL("https://example.com/search");
-url.searchParams.append("category", "books");
-url.searchParams.append("sort", "price");
-
-fetch(url); // Result: https://example.com/search?category=books&sort=price
+fetch(URL); // Expected Output: https://example.com/search?category=books&sort=price
 ```
 
-## Request Object
+When I say a URL object is useful for manipulating or building URLs dynamically, I mean that instead of treating a URL as a plain string, you can break it into parts and programmatically change or construct it. This is especially handy when you need to add query parameters, switch domains, or adjust paths without manually concatenating strings - You don’t have to manually type out the entire URL with query parameters, slashes, and symbols.
 
-- Created using the Request constructor.
+## Invalid URLs → TypeError
+
+1. If the URL is valid string as an absolute URL → It creates an URL object.
+2. If URL(relativeURL, baseURL) → Resolves a relative URL against the base URL → It converts the relative to absolute URL.
+3. An invalid URL causes a TypeError.
+   - Absence of protocol in an absolute URL
+   - Using a relative URL without a base URL → the constructor cannot determine the complete URL without a base URL.
+   - Invalid base URL or URL syntax or port number.
+
+## Risks
+
+1. Dynamic query building: Add or remove parameters based on user input.
+2. Safe manipulation: No risk of malformed strings when concatenating.
+   - Malformed strings - improperly formed text data that breaks encoding rules.
+   - Encoding rules - guidelines for converting text into byte sequences.
+3. Readable code: Easier to understand than long string concatenations.
+4. Integration with fetch: Pass the object directly to fetch().
+
+## Request() Constructor
+
 - Encapsulates both the URL and request options (method, headers, body, etc.).
 - Useful when you want to reuse or clone requests, or pass around a fully configured request.
 
@@ -89,7 +132,7 @@ Request {
 // then call fetch() multiple times with the same request.
 
 // When you create a Request Object + methods + headers + body
-// All of this is bundled into the Request object and kept in memory. It’s not “sent” until you call fetch(request).
+// All of this is bundled into the Request object and kept in memory. It’s not sent until you call fetch(request).
 // That’s why you can call fetch(orderRequest) again, and it resends the exact same payload.
 
 const request = new Request("https://example.com/api", {

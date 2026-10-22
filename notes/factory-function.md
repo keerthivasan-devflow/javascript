@@ -1,11 +1,15 @@
 ## Factory Function
 
-- A factory function in JavaScript is simply a function that creates and returns objects.
-- Factory functions are a powerful alternative to constructors when you want flexibility, encapsulation, and composition
+- A factory function is simply a function that creates and returns objects.
+- Factory functions are a powerful alternative to constructors when you want flexibility, encapsulation, and composition.
 
-1. No new keyword - Objects are created and returned explicitly, not via new.
+1. No 'new' keyword - Objects are created and returned explicitly using 'return' keyword.
 2. Encapsulation - Can hide private variables using closures.
 3. Flexibility - Easier to compose and reuse compared to classical inheritance.
+
+## Factor Function vs Constructor Function
+
+- Constructor functions commonly use prototypes to share methods between instances.
 
 ```js
 // Example: createPerson() is a factory function that produces person objects.
