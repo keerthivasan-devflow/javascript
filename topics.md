@@ -66,18 +66,22 @@
   - Number Methods (12) - Instance (6) vs Static (6)
   - Global Javascript Number Methods (3)
 - Type Casting
+- Math References
 
 # Strings
 
 - Define String
+- String Pool vs String Interning
+- Whether the string be will created in the stack or heap segment?
+- String Access Through Indexes
 - Check String Length
+  - What about empty string length - w/ space or w/o space
+- Concatenate String
+  - Using Backslash
+  - Unary Plus Operator
 - Template Literals / Template String / String Templates
 - Compare String
 - Sort String
-- String Access Through Indexes
-- String Comparison
-- String Pool vs String Interning
-- Whether the string be will created in the stack or heap segment?
 - Is there any difference between toString() vs String()?
   - toString() cannot be used on null or undefined, and will throw an error.
 - Output: Give the correct answer - What happens in such case?

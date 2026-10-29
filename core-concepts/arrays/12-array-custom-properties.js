@@ -2,6 +2,7 @@
 // Predominantly for learning purposes; not used in real-world applications.
 
 // 1. Attaching metadata to an array - You might want to store information about a collection alongside its elements.
+// Realtime usecase in javascript: str.match()
 // Here, category and source describe the container, not individual array elements.
 // However, this is generally not the recommended approach for application code.
 
