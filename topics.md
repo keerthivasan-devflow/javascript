@@ -58,15 +58,14 @@
 
 # Numbers
 
-- Integer | Floating Point | Scientic E-Notation
-- Binary | Octal | Hexadecimal Representation
+- Integer - Floating Point - Scientic E-Notation
+- Binary - Octal - Hexadecimal Representation
 - Number Separator
 - Number References (Total - 22)
-  - Number Properties (8)
-  - Number Methods (12) - Basic (6) vs Static (6)
-  - Number.prototype (1)
-  - Number.constructor (1)
-  - Global Javascript Numnber Methods (3)
+  - Number Properties (10)
+  - Number Methods (12) - Instance (6) vs Static (6)
+  - Global Javascript Number Methods (3)
+- Type Casting
 
 # Strings
 

@@ -1,12 +1,4 @@
-// Case: Internal Conversion Process Of Empty String(Number(""))
-// 1. Input is a string → "" (empty string).
-// 2. Trim whitespace → still "" (no characters).
-// 3. Check if string is empty → yes.
-// 4. An empty string is treated as 0.
-
-// String, undefined, spaces are not allowed between numerical string = NaN
-// Boolean, null, empty string, numerical string with space at the beginning and end = valid
-// Objects/arrays → coerced to string, then parsed.
+// Example 1: Number()
 console.log('Number("10") : ', Number("10"));
 console.log('Number(" 10") : ', Number(" 10"));
 console.log('Number(" 10 ") : ', Number(" 10 "));
@@ -19,14 +11,10 @@ console.log('Number("Keerthi") : ', Number("Keerthi"));
 console.log("Number(undefined) : ", Number(undefined));
 console.log('Number("keerthi 10") : ', Number("keerthi 10"));
 console.log('Number("10 Keerthi") : ', Number("10 Keerthi"));
-console.log("Number([10, 20, 30]) : ", Number([10])); // 10
-console.log("Number([10, 20, 30]) : ", Number([10, 20, 30])); // NaN
+console.log("Number([10]) : ", Number([10]));
+console.log("Number([10, 20, 30]) : ", Number([10, 20, 30]));
 
-// Numerical string either an integer or float with spaces everwhere = valid
-// String, boolean, null, undefined, Infinity = NaN
-// Array = valid (Only first indexed value will be returned)
-// "Numerical string + Actual String" like "32 abc" = valid but vice versa "abc 32" = NaN
-
+// Example 2: parseInt() vs parseFloat()
 console.log('parseInt("10") : ', parseInt("10"));
 console.log('parseInt(" 10") : ', parseInt(" 10"));
 console.log('parseInt(" 10 ") : ', parseInt(" 10 "));
@@ -40,31 +28,41 @@ console.log("parseInt(undefined) : ", parseInt(undefined));
 console.log("parseInt(null) : ", parseInt(null));
 console.log("parseInt([10, 20, 30]) : ", parseInt([10, 20, 30]));
 
-console.log(parseFloat("10"));
-console.log(parseFloat(" 10.33"));
-console.log(parseFloat(" 10.33 "));
-console.log(parseFloat("10 30.33"));
-console.log(parseFloat("10.33 Keerthi"));
-console.log(parseFloat("10.33"));
-console.log(parseFloat("Keerthi"));
-console.log(parseFloat(true));
-console.log(parseFloat(undefined));
-console.log(parseFloat(null));
-console.log(parseFloat("keerthi 10.33"));
+console.log('parseFloat("10") : ', parseFloat("10"));
+console.log('parseFloat(" 10.33") : ', parseFloat(" 10.33"));
+console.log('parseFloat(" 10.33 ") : ', parseFloat(" 10.33 "));
+console.log('parseFloat("10 30.33") : ', parseFloat("10 30.33"));
+console.log('parseFloat("10.33 Keerthi") : ', parseFloat("10.33 Keerthi"));
+console.log('parseFloat("10.33") : ', parseFloat("10.33"));
+console.log('parseFloat("Keerthi") : ', parseFloat("Keerthi"));
+console.log("parseFloat(true) : ", parseFloat(true));
+console.log("parseFloat(undefined) : ", parseFloat(undefined));
+console.log("parseFloat(null) : ", parseFloat(null));
+console.log('parseFloat("keerthi 10.33") : ', parseFloat("keerthi 10.33"));
+console.log("parseFloat(10) : ", parseFloat(10));
 
+// Example 3: Difference Between parseInt() vs parseFloat()
+console.log('Number("12.56") : ', Number("12.56")); // 12.56
+console.log('parseInt("12.56") : ', parseInt("12.56")); // 12
+console.log('parseFloat("12.56") : ', parseFloat("12.56")); // 12.56
+console.log('Number("123abc") : ', Number("123abc")); // NaN
+console.log('parseInt("123abc") : ', parseInt("123abc")); // 123
+console.log('parseFloat("123abc") : ', parseFloat("123abc")); // 123
 
-console.log(Boolean(false));
-console.log(Boolean(null));
-console.log(Boolean(undefined));
-console.log(Boolean(NaN));
-console.log(Boolean(0));
-console.log(Boolean(""));
+// Example 4: Boolean() - Falsy Values
+console.log('Boolean(false) : ', Boolean(false));
+console.log('Boolean(null) : ', Boolean(null));
+console.log('Boolean(undefined) : ', Boolean(undefined));
+console.log('Boolean(NaN) : ', Boolean(NaN));
+console.log('Boolean(0) : ', Boolean(0));
+console.log('Boolean("") : ', Boolean(""));
 
-console.log(Boolean(1));
-console.log(Boolean(true));
-console.log(Boolean(" "));
-console.log(Boolean(123));
-console.log(Boolean("Hello"));
-console.log(Boolean([10, 20, 30]));
-console.log(Boolean(function () {}));
-console.log(Boolean(class {}));
+// Example 5: Boolean() - Truthy Values
+console.log('Boolean(1) : ', Boolean(1));
+console.log('Boolean(true) : ', Boolean(true));
+console.log('Boolean(" ") : ', Boolean(" "));
+console.log('Boolean(123) : ', Boolean(123));
+console.log('Boolean("Hello") : ', Boolean("Hello"));
+console.log('Boolean([10, 20, 30]) : ', Boolean([10, 20, 30]));
+console.log('Boolean(function() {}) : ', Boolean(function() {}));
+console.log('Boolean(class {}) : ', Boolean(class {}));
