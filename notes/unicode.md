@@ -4,9 +4,7 @@
 - lowercase - 65 to 90
 - uppercase - 97 to 122
 
-## UTF‑16 Code Units vs Full Unicode Code Points
-
-### **UTF‑16 Code Units**
+## UTF‑16 Code
 
 - JavaScript strings are stored internally as **UTF‑16**.
 - Each character is represented by one or two **16‑bit code units** (values between 0 and 65535).
@@ -22,7 +20,7 @@ console.log(smile.charCodeAt(0)); // 55357 (high surrogate)
 console.log(smile.charCodeAt(1)); // 56842 (low surrogate)
 ```
 
-### **Full Unicode Code Points**
+## Unicode Code Point
 
 - A **code point** is the actual numeric value assigned to a character in Unicode (can go beyond 65535).
 - Emojis like `"😊"` have code points above U+FFFF.
@@ -32,16 +30,4 @@ Example:
 
 ```javascript
 console.log(smile.codePointAt(0)); // 128522 (full Unicode code point for 😊)
-```
-
-```js
-const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
-const text = "👨‍👩‍👧‍👦💩🔥";
-
-const segments = [...segmenter.segment(text)];
-console.log(segments.map((s) => s.segment));
-console.log([...text]);
-console.log(text.split(""));
-
-// ["👨‍👩‍👧‍👦", "💩", "🔥"]
 ```

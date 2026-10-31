@@ -5,13 +5,14 @@
 ## Case 1: startIndex
 
 1. If splice() is called with no arguments, nothing is deleted.
-2. If startIndex is 0 or positive < array.length, all elements from that index to the end of the array are removed.
-3. If startIndex >= array.length, no element will be deleted - but it can still add new elements to the end of the array.
-4. If startIndex is negative, add arr.length to it.
+2. If startIndex is 0, all elements from that index to the end of the array are removed.
+3. If startIndex is positive < array.length, all elements from that index to the end of the array are removed.
+4. If startIndex >= array.length, nothing is deleted - but it can still add new elements to the end of the array.
+5. If startIndex is negative, add arr.length to it.
    4.1. If the calculated index is less than or equal to 0, the starting index is clamped to 0.
    4.2. Otherwise, use the calculated index as the starting index.
-5. If startIndex is `undefined`, `NaN`, `false`, or `null`, it is converted to 0, so it starts removing elements from the beginning of the array.
-6. If startIndex is `Infinity`, the starting index is clamped to arr.length, so no elements are removed.
+6. If startIndex is `-Infinity`, `undefined`, `NaN`, `false`, or `null`, it is converted to 0, so all elements from that index to the end of the array are removed.
+7. If startIndex is `Infinity`, the starting index is clamped to arr.length, so no elements are removed.
 
 ## Case 2: deleteCount
 
@@ -24,6 +25,7 @@
 ## Sparse Array
 
 - If the deleted portion is sparse, the array returned by splice() is sparse as well.
+- The toSpliced() method always creates a dense array.
 
 ```js
 const birds = ["Parrot", , "Sparrow", "Eagle", "Pigeon"];
@@ -37,4 +39,31 @@ console.log(birds.splice(1, 1));
 ```js
 const arr = [1, , 3, 4, , 6];
 console.log(arr.toSpliced(1, 2)); // [1, 4, undefined, 6]
+```
+
+## Example
+
+```js
+const birds = ["Parrot", "Peacock", "Sparrow", "Eagle", "Pigeon"];
+
+console.log("Spliced Array : ", birds.toSpliced());
+console.log("Original Array : ", birds);
+
+console.log("Spliced Array : ", birds.toSpliced(0));
+console.log("Original Array : ", birds);
+
+console.log("Spliced Array : ", birds.toSpliced(4));
+console.log("Original Array : ", birds);
+
+console.log("Spliced Array : ", birds.toSpliced(-4));
+console.log("Original Array : ", birds);
+
+console.log("Spliced Array : ", birds.toSpliced(-8));
+console.log("Original Array : ", birds);
+
+console.log("Spliced Array : ", birds.toSpliced(Infinity));
+console.log("Original Array : ", birds);
+
+console.log("Spliced Array : ", birds.toSpliced(-Infinity));
+console.log("Original Array : ", birds);
 ```

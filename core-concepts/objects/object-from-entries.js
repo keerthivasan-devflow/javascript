@@ -1,4 +1,4 @@
-// Method: Object.fromEntries(iterable) converts an iterable of key-value pairs into an object.
+// Method 1: Object.fromEntries(iterable) converts an iterable of key-value pairs into an object.
 
 // If the iterable contains individual values rather than key-value pairs, we must transform those values
 // into pairs before passing them to the method. A plain object must also be converted into an iterable,

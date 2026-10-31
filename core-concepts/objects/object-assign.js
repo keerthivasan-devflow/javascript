@@ -2,6 +2,8 @@
 // 1. This method only copies enumerable and own properties from a source object to a target object.
 // 2. Properties in the target object are overwritten by properties in the sources if they have the same key. Left → Right
 
+// Note: Object.assign() performs a shallow copy, not a deep copy.
+
 // Example 1: Only enumerable properties are copied or merged.
 var source1 = { a: 10 };
 var source2 = { b: 20 };

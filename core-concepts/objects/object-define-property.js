@@ -1,5 +1,5 @@
-// Method: Object.defineProperty(object, key, descriptor) allows a precise addition to or modification of a property on an object.
-// Method: Object.defineProperties(object, propertiesObject)
+// Method 1: Object.defineProperty(object, key, descriptor) allows a precise addition to or modification of a property on an object.
+// Method 2: Object.defineProperties(object, propertiesObject)
 
 // 1. object - The object on which the property will be added or modified.
 // 2. key - The property name, specified as a string or symbol.
@@ -16,7 +16,7 @@
 // An accessor descriptor is a property described by a getter-setter pair of functions.
 // A descriptor must be one of these two flavors; it cannot be both.
 
-// Case 1: Use assignment to update the name property. 
+// Case 1: Use assignment to update the name property.
 const person = {
   firstname: "Brian", // step 2: "Brian" is now changed to "David".
 
@@ -31,7 +31,6 @@ person.name = "David"; // step 1: calls the setter-function and updates the firs
 console.log(person.firstname); // Expected Output: "David"
 console.log(person.name); // Expected Output: undefined - But why?
 // Note: A setter handles assignments; it does not return a value so define a getter using get name() alongside your setter.
-
 
 // Case 2: Use Object.defineProperty() to redefine the name property.
 const student = {

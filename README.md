@@ -73,3 +73,17 @@
 - Generic methods - arr.find() method is generic. It only expects the this value to have a length property and integer-keyed properties. Read more about the algorithm like[Prime Number] on the same page.
 - Static Properties or Methods
 - Instance Properties or Methods
+
+## Segmenter
+
+```js
+const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
+const text = "👨‍👩‍👧‍👦💩🔥";
+
+const segments = [...segmenter.segment(text)];
+console.log(segments.map((s) => s.segment));
+console.log([...text]);
+console.log(text.split(""));
+
+// ["👨‍👩‍👧‍👦", "💩", "🔥"]
+```

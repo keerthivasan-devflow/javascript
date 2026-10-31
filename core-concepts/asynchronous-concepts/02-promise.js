@@ -5,8 +5,8 @@ let pr1 = new Promise();
 console.log(pr1);
 
 // Example 2: Executor Function
-// () => {} is an empty executor function. It does not call either resolve() or reject(). Because the promise
-// has not been fulfilled or rejected, the promise remains in the pending state and its result remains undefined.
+// () => {} is an empty executor function. It does not call either resolve() or reject(). so
+//  the promise remains in the pending state and its result remains undefined.
 let pr2 = new Promise(() => {});
 console.log(pr2);
 

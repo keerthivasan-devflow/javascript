@@ -1,5 +1,5 @@
-// Method: Object.entries(obj) accepts an object and returns an array of its own, enumerable, string-keyed property entries.
-// Symbol-keyed properties are excluded.
+// Method 1: Object.entries(obj) accepts an object and returns an array of its own, enumerable, string-keyed property entries
+// but symbol-keyed properties are excluded.
 
 // Each entry is a two-element array containing the property's key and value.
 // Notice that:

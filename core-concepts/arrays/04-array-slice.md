@@ -2,20 +2,16 @@
 
 - Note: Here, start is inclusive and end is exclusive.
 
-- If both start is omitted, then start is clamped to 0.
+- If both start and end is omitted, then it is clamped to 0.
 - If start < arr.length, elements from the specified index to the end of the array are sliced.
 - If start >= array.length, an empty array is returned.
 - If start is negative, add arr.length to it.
   - If the calculated index is less than or equal to 0, the starting index is clamped to 0.
   - Otherwise, use the calculated index as the starting index.
-- If start is undefined or NaN → 0
-
-- If end >= array.length or end is omitted or undefined, array.length is used.
-- If end is NaN → then 0 is used.
-- +Infinity → arr.length
-- -Infinity → 0
-
-- If both start and end is omitted, then it is clamped to 0.
+- If arr.slice(NaN, NaN) → arr.slice(0, 0) → always returns an empty array [].
+- If arr.slice(undefined, undefined) → arr.slice(0, arr.length) → always returns the entire array as a shallow copy.
+- Infinity → 0; Infinity → arr.length
+- If end >= array.length or end is omitted, array.length is used.
 
 ```js
 const animals = ["ant", "bison", "camel", "duck", "elephant"];

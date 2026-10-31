@@ -16,17 +16,6 @@ sports.push("football", "swimming");
 console.log(sports);
 ```
 
-## Merging Two Arrays
-
-- Combine two arrays by using the spread syntax to append all elements of one array to another.
-- Alternatively, use the arr.concat() method to create a new array containing elements from both arrays.
-
-```js
-const games = ["cricket", "table tennis"];
-sports.push(...games);
-console.log(sports);
-```
-
 ## 2. arr.unshift(element1, element2, ...)
 
 - This method has similar behavior to push(), but applied to the start of an array.
@@ -35,7 +24,7 @@ console.log(sports);
 
 - Removes the last element from an array and returns that element. This method changes the length of the array.
 - undefined if the array is empty.
-- To return a new array with the last element removed. `arr.slice(0, -1)`
+- To return a new array with the last element removed. `arr.slice(0, -1)` or `arr.slice(0, arr.length - 1)`
 
 ## 4. arr.shift()
 
@@ -46,6 +35,7 @@ console.log(sports);
 ## Why is it faster to work with the end of an array than with its beginning?
 
 - Methods push or pop run fast, while shift or unshift are slow.
+- It’s not enough to take and remove the element with the index 0. Other elements need to be renumbered as well.
 - The shift operation must do 3 things
   - Remove the element with the index 0.
   - Move all elements to the left, renumber them from the index 1 to 0, from 2 to 1 and so on.
@@ -70,3 +60,14 @@ console.log(arr[3]); // Expected Output: undefined
 
 - So, the simplest way to clear the array is: arr.length = 0;
 - Note: [] returns ""
+
+## Merging Two Arrays
+
+- Combine two arrays by using the spread syntax to append all elements of one array to another.
+- Alternatively, use the arr.concat() method to create a new array containing elements from both arrays.
+
+```js
+const games = ["cricket", "table tennis"];
+sports.push(...games);
+console.log(sports);
+```

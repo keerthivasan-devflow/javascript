@@ -1,12 +1,12 @@
 // Method: Object.create(proto, propertiesObject)
 // Object.create() creates a new object and sets the object you provide as its prototype. (Check the purpose No: 3)
 
-// Purpose 1: To create an object with no prototype, pass null as the first argument to Object.create().
-
 // Important distinction
 // - Instance methods: obj.toString() and obj.hasOwnProperty() are unavailable because obj has no prototype.
 // - Static methods: Object.keys(obj), Object.values(obj), and Object.hasOwn(obj, "brand")
 //  still work because they are called directly on Object, not inherited by obj.
+
+// Purpose 1: To create an object without a prototype, pass null as the first argument to Object.create().
 
 // Case 1: Create an object without a prototype.
 const LenovoLaptop = Object.create(null);

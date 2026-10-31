@@ -193,3 +193,9 @@ const ocean = "The sky is green. The ocean is also green.";
 console.log("replace (first occurrence): ", ocean.replace("green", "blue"));
 console.log("replace (all occurrences): ", ocean.replaceAll("green", "blue"));
 console.log("replace all w/ regex: ", ocean.replaceAll(/green/g, "blue"));
+
+// Example 14: String.fromCharCode(num1, num2, /* …, */ numN)
+// A number between 0 and 65535 (0xFFFF) representing a UTF-16 code unit.
+
+// Example 15: String.fromCodePoint(num1, num2, /* …, */ numN)
+// An integer between 0 and 0x10FFFF (inclusive) representing a Unicode code point.
