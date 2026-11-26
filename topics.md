@@ -1,14 +1,4 @@
-# Where To
-
-- 3 ways to write javascript code
-  - Browser Console
-  - HTML Inline Script Tag
-  - External Javascript File
-- Keywords: async vs defer
-
-# JS Output
-
-# Variables
+# 1. Variables
 
 - Variables Introduction
 - Syntax Rules
@@ -27,7 +17,7 @@
 - Lexical Environment
 - Scope Chain
 
-# Datatypes
+# 2. Datatypes
 
 - Number
 - BigInteger
@@ -39,7 +29,7 @@
 - undefined
 - Symbol
 
-# Operators
+# 3. Operators
 
 - Arithmetic
 - Assignment
@@ -50,13 +40,13 @@
 - typeof
 - instanceof
 
-# Advanced Operators
+# 4. Advanced Operators
 
 - Nullish Coalescing Operator
 - Logical AND Operator
 - Optional Chaining Operator
 
-# Numbers
+# 5. Numbers
 
 - Integer - Floating Point - Scientic E-Notation
 - Binary - Octal - Hexadecimal Representation
@@ -68,7 +58,7 @@
 - Type Casting
 - Math References
 
-# Strings
+# 6. Strings
 
 - Define String
 - String Pool vs String Interning
@@ -91,7 +81,7 @@
 - String References (Total - 38)
   - String Search Methods (8)
 
-# Arrays
+# 7. Arrays
 
 - Indexed Array vs Associative Array
 - Dense Array vs Sparse Array
@@ -109,7 +99,7 @@
 - Iterables
 - Array References (42)
 
-# Objects
+# 8. Objects
 
 - Create an object (6)
   - Object Literal Syntax
@@ -132,7 +122,7 @@
 - Object References
 - Pass By Value | Pass By Reference
 
-# Set Datastructure
+# 9. Set Datastructure
 
 - Create Set
 - Set Methods (Total - 10)
@@ -143,7 +133,7 @@
 - Difference between Set vs WeakSet
 - Set Lookup - O(1) - How?
 
-# Map Datastructure
+# 10. Map Datastructure
 
 - Create Map - 2 ways
 - Map References (Total - 11)
@@ -151,7 +141,7 @@
 - WeakMap References (Total - 4)
 - Difference between Map vs WeakMap
 
-# Functions
+# 11. Functions
 
 - Function Declaration or Function Statement or Function Definition
 - Parameters vs Arguments
@@ -191,7 +181,7 @@
 - Binary vs Polyadic Function
 - Static vs Dynamic Function
 
-# Classes
+# 12. Classes
 
 - Instance Property
 - Static property and methods
@@ -203,7 +193,7 @@
 - Private variables and methods.
 - Does javascript support constructor overloading?
 
-# General Concept
+# 13. General Concept
 
 - Synchronous Javascript
 - Asynchronous Javascript
@@ -219,7 +209,7 @@
 - JS Web API
   - Local storage, Session storage
 
-# Errors
+# 14. Errors
 
 - Syntax Error
 - Reference Error
@@ -230,7 +220,7 @@
 - Eval Error (deprecated)
 - Silent Errors
 
-# Web API
+# 15. Web API
 
 - Document Object Model
 - Graphics / Multi-media
@@ -242,7 +232,7 @@
 - Security
 - Other
 
-# ES6 Features
+# 16. ES6 Features
 
 - let / const keyword
 - Symbols
@@ -295,26 +285,3 @@
   - ES6 features
     - Named export and import
     - Default export and import
-
-// -------------------------
-
-// function\* test() {
-// let a = 0;
-// let b = 1;
-
-// let c = a + b;
-
-// while (true) {
-// yield c;
-// a = b;
-// b = c;
-// }
-// }
-
-// let gen = test();
-
-// console.log(gen.next());
-// console.log(gen.next());
-// console.log(gen.next());
-// console.log(gen.next());
-// console.log(gen.next());

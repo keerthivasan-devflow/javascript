@@ -1,3 +1,12 @@
+// By default, a regular expression looks for a matching sequence of characters, not necessarily an exact whole-word match.
+const str = "test testing tester";
+
+console.log(str.match(/test/));
+// Note: This also returns all matching occurrences, but without additional match details.
+// Output: [ 'test', 'test', 'test' ] → making it less useful.
+console.log(str.match(/test/g));
+console.log([...str.matchAll(/test/g)]);
+
 // Regular Expression Declaration
 let text1 = /Hello/;
 let text2 = new RegExp("Hello");

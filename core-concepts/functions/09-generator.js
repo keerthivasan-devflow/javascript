@@ -32,3 +32,25 @@ console.log(gen.next());
 console.log(gen.next(95));
 console.log(gen.next());
 console.log(gen.next());
+
+// Example 3:
+function* test() {
+  let a = 0;
+  let b = 1;
+
+  let c = a + b;
+
+  while (true) {
+    yield c;
+    a = b;
+    b = c;
+  }
+}
+
+let gf = test();
+
+console.log(gf.next());
+console.log(gf.next());
+console.log(gf.next());
+console.log(gf.next());
+console.log(gf.next());

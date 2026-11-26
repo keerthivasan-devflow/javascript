@@ -62,11 +62,3 @@ setTimeout(() => task.cancel(), 500);
 - **Timeout ≠ cancellation**: Using `Promise.race()` with a timeout only stops waiting; it doesn’t stop the task itself.  [blog.gaborkoos.com](https://blog.gaborkoos.com/posts/2025-12-23-Cancellation-In-JavaScript-Why-Its-Harder-Than-It-Looks/)  
 
 ---
-
-## 📌 Summary
-- **Native Promises cannot be canceled.**  
-- Use **AbortController** for `fetch`.  
-- Build **cancelable wrappers** with `Promise.withResolvers()` or similar patterns.  
-- Understand that cancellation usually means *ignoring results*, not stopping execution.  
-
-Would you like me to show you a **side-by-side comparison of AbortController vs custom cancelable wrappers** so you can see which fits better for real-world use cases?

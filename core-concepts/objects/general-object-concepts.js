@@ -7,7 +7,7 @@ for (let property of defaultProperties) {
 }
 
 // Example: Object.prototype
-// To add a new property to the root of the Object prototype
+// To add a new property to the Object.prototype
 let employee_174641 = {
   firstname: "Rick",
   lastname: "Stalker",
@@ -49,7 +49,32 @@ console.log(machine[machine_name]); // "server"
 console.log(machine["machine hours"]); // 10000
 console.log(machine["machine name"]); // "server"
 
-// Example: obj.propertyIsEnumerable(key)
-Object.defineProperty(student, "grade", { enumerable: false });
-console.log(student.propertyIsEnumerable("name"));
-console.log(student.propertyIsEnumerable("grade"));
+// Loop through an object
+const person = {
+  firstname: "Keerthivasan",
+  lastname: "Mani",
+  age: 26,
+  location: "trichy",
+  children: {
+    count: 2,
+    names: ["Parvesh", "Laksha"],
+  },
+  address: {
+    street: "Mariyamman Kovil Street",
+    city: "Jeeyapuram",
+    district: "Trichy",
+  },
+  fullname() {
+    return `${this.firstname} + ' ' + ${this.lastname}`;
+  },
+};
+
+for (const key in person) {
+  if (typeof person[key] === "object") {
+    for (const nestedKey in person[key]) {
+      console.log(`[${nestedKey}] => ${person[key][nestedKey]}`);
+    }
+  } else {
+    console.log(`[${key}] => ${person[key]}`);
+  }
+}

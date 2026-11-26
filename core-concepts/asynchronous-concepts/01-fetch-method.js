@@ -24,7 +24,7 @@ fetchBreeds()
 
 // Example 3: To showcase API error failure
 // fetch() rejects its promise when a network error occurs, but not when the server responds
-// with an HTTP error status, such as 404 or 500.
+// with an HTTP error status, such as 400, 401, 404 or 500.
 
 // "https://catfact.ninja/facttt" - both will come to then() only either successful or unsuccessful only response changes.
 

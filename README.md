@@ -25,6 +25,7 @@
 10. Teddy Smith
 11. Proacademy Javascript channel
 12. Andrew Burgess - Iterators, Generators, Iterables
+13. SimpleByte - For authentication or JWT token or SSL
 
 ## Fake API's Lists
 

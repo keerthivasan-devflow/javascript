@@ -1,10 +1,26 @@
 // Method: Object.create(proto, propertiesObject)
 // Object.create() creates a new object and sets the object you provide as its prototype. (Check the purpose No: 3)
 
-// Important distinction
+// Object created using Object.create(null) will have the following problem - (see example below)
 // - Instance methods: obj.toString() and obj.hasOwnProperty() are unavailable because obj has no prototype.
 // - Static methods: Object.keys(obj), Object.values(obj), and Object.hasOwn(obj, "brand")
 //  still work because they are called directly on Object, not inherited by obj.
+
+// Note: Both Object.hasOwn() and Object.prototype.hasOwnProperty() are used to check whether an object
+// has a direct (own) property, without checking its prototype chain.
+
+// Example 1: To check
+const person = Object.create(null);
+person.name = "Virat";
+console.log(person);
+console.log(Object.hasOwn(person, "name")); // true
+console.log(person.hasOwnProperty("name")); // TypeError: person.hasOwnProperty is not a function
+
+// Example 2: To check own property only
+const employee = Object.create(person);
+employee.salary = 50000;
+console.log(Object.hasOwn(employee, "salary")); // true
+console.log(Object.hasOwn(employee, "name")); // false
 
 // Purpose 1: To create an object without a prototype, pass null as the first argument to Object.create().
 

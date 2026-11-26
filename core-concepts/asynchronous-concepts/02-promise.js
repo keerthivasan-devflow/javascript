@@ -1,6 +1,36 @@
-// Example 1: Promise() Constructor.
+// Note: However "Promise()" alone cannot make HTTP requests or access external APIs. It requires a mechanism
+// like fetch() to perform network requests.
+
+// Fetching a random cat fact using "fetch()" with async-await keyword syntax. This is sufficient.
+async function fetchCatfact() {
+  const response = await fetch("https://catfact.ninja/fact");
+  const data = await response.json();
+  console.log(data);
+}
+
+// There is no need to wrap fetch() inside another "promise".
+const promise = new Promise((resolve, reject) => {
+  fetch("https://catfact.ninja/fact")
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch((error) => reject(error));
+});
+
+promise.then((data) => console.log(data));
+
+fetchCatfact();
+
+// Some common use cases:
+// - Wrapping callback-based asynchronous operations.
+// - Creating custom asynchronous operations.
+// - Converting older asynchronous APIs into Promise-based APIs.
+// - Controlling when a Promise resolves or rejects.
+
+// #################################################################################################################################
+
+// Example 1: Promise() Constructor
 // "Uncaught TypeError: Promise resolver undefined is not a function". The error occurs because
-// the Promise() constructor requires a executor function as an argument.
+// the Promise() constructor requires a executor function.
 let pr1 = new Promise();
 console.log(pr1);
 
@@ -35,7 +65,7 @@ console.log("End");
 
 // Example 6: A complete promise constructor example to handle either a resolve() or reject().
 const pr6 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve(100), 5000);
+  setTimeout(() => resolve("Successful message"), 5000);
 });
 
 pr6

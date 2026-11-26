@@ -38,6 +38,42 @@ Once your application is ready - then the important process is "hoisting" - whic
 
 godaddy - For Domain Name Server (DNS)
 
+## What is URL?
+
+URL is the address used to locate a resource on the internet - It means that where something is available on the internet so that it can be accessed and publically available everywhere or anywhere.
+
+## What is an Endpoint?
+
+- An endpoint is a specific URL where an application can communicate with a server to perform a particular operation or access particular data.
+- Each endpoint serves a different purpose.
+  - https://api.swiggy.com/restaurants
+  - https://api.swiggy.com/restaurants/101
+  - https://api.swiggy.com/orders
+
+Note: A URL is like a building's address, whereas an endpoint is like a specific service counter inside that building.
+
+## What is an API?
+
+- In simple words, an API is a way for two applications to communicate with each other.
+
+- You (Customer): Request food.
+- Waiter: Takes your request to the kitchen.
+- Kitchen: Prepares the food.
+- Waiter: Brings the food back to you.
+
+Your frontend doesn't need to know how the backend works internally. It simply communicates through the API.
+
+## Status code
+
+GET 200
+POST 201
+PUT 200 or 204
+PATCH 200 or 204
+DELETE 200 or 204
+
+- 202 means the server has accepted the request for processing, but the processing has not yet been completed.
+- Usually used when a request triggers a background task that takes time to complete. so the server basically returns 202 without waiting for the processing to finish.
+
 ## Important Note
 
 1. URL + options in fetch() → Works well for one‑off requests; you provide the URL and configuration together only at the moment of the call.

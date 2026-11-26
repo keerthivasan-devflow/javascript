@@ -29,14 +29,15 @@ display();
 // Case 4: Using Traditional Functions as Object Methods.
 // Refers to the object that calls the method: "invoice" in "getOrderID()"" and "customer" in "display()".
 let invoice = {
+  firstname: "Parent",
   orderId: "TKPA2000796513",
   getOrderID() {
-    console.log("this.orderId : ", this.orderId);
+    console.log(this.firstname, " and the order id is ", this.orderId);
   },
   customer: {
-    name: "Ravi",
+    firstname: "Child",
     display() {
-      console.log(this.name, " and the order id is ", this.orderId);
+      console.log(this.firstname, " and the order id is ", this.orderId);
     },
   },
 };
@@ -88,11 +89,11 @@ e.display();
 
 function makeUser() {
   return {
-    name: "Gautam",
+    firstname: "Gautam",
     ref: this,
   };
 }
-console.log(makeUser().ref.name); // undefined
+console.log(makeUser().ref.firstname); // undefined
 
 // Solution for the above code
 function makeUser() {
